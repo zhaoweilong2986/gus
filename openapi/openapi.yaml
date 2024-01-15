@@ -860,6 +860,7 @@ paths:
       - $ref: '#/components/parameters/xApiToken'
     get:
       summary: Retrieve a Payment Method by Id internally which returns some extra info
+      description: Retrieve a Payment Method by Id internally which returns some extra info
       operationId: getPaymentMethodInternal
       tags:
         - paymentMethodInternal
@@ -880,6 +881,7 @@ paths:
           $ref: '#/components/responses/internalServer'
     put:
       summary: Update payment method internal
+      description: Update payment method internal
       operationId: updatePaymentMethodInternal
       tags:
         - paymentMethodInternal
@@ -2219,6 +2221,7 @@ paths:
       - $ref: '#/components/parameters/xApiToken'
     post:
       summary: 3DS Card Lookup
+      description: 3DS Card Lookup
       operationId: cardLookup
       security:
         - OAuth2:
@@ -2269,22 +2272,6 @@ components:
       schema:
         type: string
         example: 06f1e47b-a1b5-4902-be9c-bccc506127c4
-    xMerchantId:
-      description: |
-        Thirteen character long identification provided to merchants by Moneris.  Required when caller is impersonating or submitting a request on behalf of a Merchant.
-      required: true
-      schema:
-        $ref: '#/components/schemas/merchantId'
-    xStoreId:
-      description: Moneris Store Id
-      required: true
-      schema:
-        $ref: '#/components/schemas/storeId'
-    xApiToken:
-      description: Moneris Api Token
-      required: true
-      schema:
-        $ref: '#/components/schemas/apiToken'
     rateLimitCount:
       description: The maximum number of requests that the client can make in this window.
       required: false
@@ -2369,14 +2356,6 @@ components:
       required: true
       schema:
         $ref: '#/components/schemas/apiToken'
-    merchantId:
-      in: header
-      name: X-Merchant-Id
-      description: |
-        Thirteen character long identification provided to merchants by Moneris.  Required when caller is impersonating or submitting a request on behalf of a Merchant.
-      required: true
-      schema:
-        $ref: '#/components/schemas/merchantId'
     pageBeforeCursor:
       in: query
       name: cursor
