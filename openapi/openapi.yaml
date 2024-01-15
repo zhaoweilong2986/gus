@@ -862,6 +862,8 @@ paths:
       summary: Retrieve a Payment Method by Id internally which returns some extra info
       description: Retrieve a Payment Method by Id internally which returns some extra info
       operationId: getPaymentMethodInternal
+      security:
+        - ApiKeyAuth: []      
       tags:
         - paymentMethodInternal
       responses:
@@ -883,6 +885,8 @@ paths:
       summary: Update payment method internal
       description: Update payment method internal
       operationId: updatePaymentMethodInternal
+      security:
+        - ApiKeyAuth: []      
       tags:
         - paymentMethodInternal
       requestBody:
