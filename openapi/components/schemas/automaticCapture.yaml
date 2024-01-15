@@ -1,0 +1,7 @@
+type: boolean
+description: >-
+  This flag is used to overide the default payment transaction type enabled on
+  the Merchant profile. Yes (Default) will cause Moneris to capture the payment
+  when it is authorized. No will cause Moneris to place a hold on the funds when
+  the payment is authorized.
+default: true

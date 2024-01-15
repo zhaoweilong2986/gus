@@ -1,0 +1,5 @@
+type: string
+description: Province or state
+minLength: 1
+maxLength: 30
+example: Ontario

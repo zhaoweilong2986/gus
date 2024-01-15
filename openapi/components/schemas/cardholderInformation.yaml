@@ -1,0 +1,9 @@
+type: object
+description: Information about the holder of the card.
+properties:
+  cardholderName:
+    $ref: .\cardholderName.yaml
+  companyName:
+    $ref: .\companyName.yaml
+required:
+  - cardholderName

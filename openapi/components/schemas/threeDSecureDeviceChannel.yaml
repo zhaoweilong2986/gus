@@ -1,0 +1,8 @@
+type: string
+description: >-
+  Indicates the type of channel interface being used to initiate the
+  transaction.
+enum:
+  - BROWSER
+  - THREE_D_SECURE_REQUESTOR_INITIATED
+example: BROWSER

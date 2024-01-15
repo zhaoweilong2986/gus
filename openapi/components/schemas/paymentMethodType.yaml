@@ -1,0 +1,11 @@
+type: string
+description: |
+  The type of Payment Method being used. It can be:
+    - Permanent Token.
+    - Temporary Token.
+    - Card.
+enum:
+  - PERMANENT_TOKEN
+  - TEMPORARY_TOKEN
+  - CARD
+example: TEMPORARY_TOKEN

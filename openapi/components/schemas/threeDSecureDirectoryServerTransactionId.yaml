@@ -1,0 +1,7 @@
+type: string
+description: >-
+  Universally unique transaction identifier assigned by the 3DS Directory Server
+  (DS) to identify a single transaction.
+maxLength: 36
+format: uuid
+example: ad9b0eda-bf9b-4288-b188-9467993603e1

@@ -1,0 +1,10 @@
+type: string
+description: >-
+  Indicates whether a browser-based challenge is requested for this transaction.
+  Standard is 'No Preference'
+enum:
+  - NO_PREFERENCE
+  - NO_CHALLENGE_REQUESTED
+  - CHALLENGE_REQUESTED_THREE_D_SECURE_REQUESTOR_PREFERENCE
+  - CHALLENGE_REQUESTED_MANDATE
+example: NO_PREFERENCE

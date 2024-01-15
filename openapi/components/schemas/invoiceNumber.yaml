@@ -1,0 +1,7 @@
+type: string
+description: >-
+  The terminal uses the invoice number field to submit a unique value to
+  identify a transaction. This data is logged by Moneris Solutions.
+minLength: 1
+maxLength: 17
+example: 1a2s3d45v6

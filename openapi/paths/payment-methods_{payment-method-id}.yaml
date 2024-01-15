@@ -1,0 +1,248 @@
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\prm-common_apiVersion.yaml
+  - $ref: ..\components\parameters\paymentMethodId.yaml
+  - $ref: ..\components\parameters\xMerchantId.yaml
+  - $ref: ..\components\parameters\xStoreId.yaml
+  - $ref: ..\components\parameters\xApiToken.yaml
+get:
+  summary: Retrive Payment Method
+  description: Retrieve a Payment Method by Id
+  operationId: getPaymentMethod
+  security:
+    - OAuth2:
+        - payment.read
+    - OAuth2:
+        - payment.write
+    - ApiKeyAuth: []
+  tags:
+    - Payment Methods
+  responses:
+    '200':
+      description: Payment method found and returned in the response.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\paymentMethodResponse.yaml
+          example:
+            paymentMethodId: pm0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            merchantId: '0123456789101'
+            cardholderInformation:
+              cardholderName: John Doe
+              companyName: SP Ltd
+            contactDetails:
+              phoneNumber: 1-866-319-7450
+              email: moneris@moneris.com
+            billingAddress:
+              unitNumber: 123A
+              streetNumber: '3300'
+              streetName: Bloor Street West
+              city: Toronto
+              province: Ontario
+              postalCode: M8X 2X2
+              country: CA
+            paymentMethodType: CARD
+            paymentMethodInformation:
+              cardInformation:
+                bankIdentificationNumber: '123456'
+                lastFour: '1234'
+                expiryMonth: 1
+                expiryYear: 2023
+                cardBrand: MASTERCARD
+                cardType: CREDIT
+                cardFingerprint: 1Q2W3E4r5t6rfwewerwewrrw
+                issuer: RBC
+              paymentAccountReference: '11112222333344445555666677778'
+            paymentMethodStored: DO_NOT_STORE
+            createdAt: '2019-07-30T06:43:40.252Z'
+            modifiedAt: '2019-07-30T06:43:40.252Z'
+            customData:
+              property1: string
+              property2: string
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      description: Payment method not found.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error.yaml
+          example:
+            type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+            title: NOT_FOUND
+            status: 404
+            detail: null
+            instance: /payment-methods/pm0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            category: INVALID_REQUEST_ERROR
+            errors: []
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml
+put:
+  summary: Update Payment method
+  description: >
+    Update payment method referenced by its Id. 
+
+    Certain details may not be updated if the payment method was used in a
+    transaction.
+  operationId: updatePaymentMethod
+  security:
+    - OAuth2:
+        - payment.write
+    - ApiKeyAuth: []
+  tags:
+    - Payment Methods
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\updatePaymentMethodRequest.yaml
+        examples:
+          card:
+            $ref: ..\components\examples\updateCardPaymentMethodRequest.yaml
+          temporary_token:
+            $ref: >-
+              ..\components\examples\updateTemporaryTokenPaymentMethodRequest.yaml
+          permanent_token:
+            $ref: >-
+              ..\components\examples\updatePermanentTokenPaymentMethodRequest.yaml
+  responses:
+    '200':
+      description: Update payment method
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\paymentMethodResponse.yaml
+          example:
+            paymentMethodId: pm0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            merchantId: '0123456789101'
+            cardholderInformation:
+              cardholderName: John Doe
+              companyName: SP Ltd
+            contactDetails:
+              phoneNumber: 1-866-319-7450
+              email: moneris@moneris.com
+            billingAddress:
+              unitNumber: 123A
+              streetNumber: '3300'
+              streetName: Bloor Street West
+              city: Toronto
+              province: Ontario
+              postalCode: M8X 2X2
+              country: CA
+            paymentMethodType: CARD
+            paymentMethodInformation:
+              cardInformation:
+                bankIdentificationNumber: '123456'
+                lastFour: '1234'
+                expiryMonth: 1
+                expiryYear: 2023
+                cardBrand: MASTERCARD
+                cardType: CREDIT
+                cardFingerprint: 1Q2W3E4r5t6rfwewerwewrrw
+                issuer: RBC
+              paymentAccountReference: '11112222333344445555666677778'
+            paymentMethodStored: DO_NOT_STORE
+            createdAt: '2019-07-30T06:43:40.252Z'
+            modifiedAt: '2019-07-30T06:43:40.252Z'
+            customData:
+              property1: string
+              property2: string
+    '400':
+      $ref: ..\components\responses\badRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      description: Payment method not found.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error.yaml
+          example:
+            type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+            title: NOT_FOUND
+            status: 404
+            detail: null
+            instance: /payment-methods/pm0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            category: INVALID_REQUEST_ERROR
+            errors: []
+    '409':
+      $ref: ..\components\responses\concurrencyConflict.yaml
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml
+delete:
+  summary: Delete Payment Method
+  description: Deletes a payment method.
+  operationId: deletePaymentMethod
+  security:
+    - OAuth2:
+        - payment.write
+    - ApiKeyAuth: []
+  tags:
+    - Payment Methods
+  responses:
+    '204':
+      description: |
+        Payment method deleted successfully. 
+        Response content contains the payment method details.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      description: Payment method not found.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error.yaml
+          example:
+            type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+            title: NOT_FOUND
+            status: 404
+            detail: null
+            instance: /payment-methods/pm0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            category: INVALID_REQUEST_ERROR
+            errors: []
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

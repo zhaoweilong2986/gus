@@ -1,0 +1,6 @@
+in: path
+name: authentication-id
+description: The unique identifier of the authentication
+required: true
+schema:
+  $ref: ..\schemas\resourceId.yaml

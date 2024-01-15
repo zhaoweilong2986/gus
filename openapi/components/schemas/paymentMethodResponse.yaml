@@ -1,0 +1,26 @@
+title: paymentMethodResponse
+description: Payment method response object
+type: object
+properties:
+  paymentMethodId:
+    $ref: .\resourceId.yaml
+  merchantId:
+    $ref: .\merchantId.yaml
+  cardholderInformation:
+    $ref: .\cardholderInformation.yaml
+  contactDetails:
+    $ref: .\contactDetails.yaml
+  billingAddress:
+    $ref: .\address.yaml
+  paymentMethodType:
+    $ref: .\paymentMethodType.yaml
+  paymentMethodInformation:
+    $ref: .\paymentMethodInformation.yaml
+  paymentMethodStored:
+    $ref: .\storePaymentMethod.yaml
+  createdAt:
+    $ref: .\createdAt.yaml
+  modifiedAt:
+    $ref: .\modifiedAt.yaml
+  customData:
+    $ref: .\customData.yaml

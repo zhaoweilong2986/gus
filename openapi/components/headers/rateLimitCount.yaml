@@ -1,0 +1,6 @@
+description: The maximum number of requests that the client can make in this window.
+required: false
+schema:
+  type: integer
+  format: int64
+example: 1000

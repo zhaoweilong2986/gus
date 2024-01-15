@@ -1,0 +1,7 @@
+type: string
+description: >-
+  20 alphanumeric characters token provided to merchants by Moneris for
+  processing transactions via API
+minLength: 5
+maxLength: 20
+example: eD13Bb6E00249w642a57

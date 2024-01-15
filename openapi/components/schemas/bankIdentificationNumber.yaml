@@ -1,0 +1,8 @@
+type: string
+description: >-
+  Bank Identification Number (BIN) consists of the first six, up to eight,
+  digits of the primary account number (PAN), and which identifies both the
+  relevant payment network and the specific issuing institution.
+minLength: 6
+maxLength: 8
+example: '123456'

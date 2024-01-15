@@ -1,0 +1,9 @@
+type: integer
+format: int32
+description: >-
+  CVD value located on credit card. The CVD value (supplied by the cardholder)
+  must only be passed to the payment gateway. Under no circumstances may it be
+  stored for subsequent use or displayed as part of the receipt information.
+minimum: 0
+maximum: 9999
+example: 123

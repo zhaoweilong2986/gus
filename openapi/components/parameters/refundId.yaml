@@ -1,0 +1,6 @@
+in: path
+name: refund-id
+description: The unique identifier of the refund
+required: true
+schema:
+  $ref: ..\schemas\resourceId.yaml

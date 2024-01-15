@@ -1,0 +1,5 @@
+type: string
+description: Postal or zip code
+minLength: 1
+maxLength: 30
+example: M8X 2X2

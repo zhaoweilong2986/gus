@@ -1,0 +1,7 @@
+type: string
+description: >-
+  This field represents the Moneris response code for the equivalent
+  International Organization for Standardization (ISO) response code.
+minLength: 2
+maxLength: 2
+example: 0

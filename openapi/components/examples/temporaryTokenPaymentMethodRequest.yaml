@@ -1,0 +1,12 @@
+summary: Temporary Token Payment Method request
+value:
+  idempotencyKey: 5d8f812e-9969-4885-85bb-d03948eccac2
+  cardholderInformation: null
+  contactDetails: null
+  billingAddress: null
+  paymentMethodData:
+    paymentMethodType: TEMPORARY_TOKEN
+    temporaryToken: ot-HCUeCFtXJfEZSSUqvUJk0
+  customData:
+    property1: string
+    property2: string

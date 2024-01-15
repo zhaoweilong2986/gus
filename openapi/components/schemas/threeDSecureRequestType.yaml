@@ -1,0 +1,9 @@
+type: string
+description: |
+  Type of payment that triggered the verification.
+    - **CARDHOLDER**: Cardholder initiated payment.
+    - **RECURRING**: Recurring payment.
+enum:
+  - CARDHOLDER
+  - RECURRING
+example: CARDHOLDER

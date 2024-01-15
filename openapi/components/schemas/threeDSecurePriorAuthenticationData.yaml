@@ -1,0 +1,10 @@
+type: string
+description: >-
+  Data that documents and supports a specific authentication process. In the
+  current version of the specification this data element is not defined in
+  detail, however the intention is that for each 3DS Requestor Authentication
+  Method, this field carry data that the ACS can use to verify the
+  authentication process. In future versions of the specification, these details
+  are expected to be included.
+maxLength: 2048
+example: '12345678'

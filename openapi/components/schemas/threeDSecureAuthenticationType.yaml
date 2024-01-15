@@ -1,0 +1,11 @@
+type: string
+description: >-
+  Indicates the type of authentication method the Issuer will use to challenge
+  the Cardholder, whether in the ARes message or what was used by the ACS when
+  in the RReq message.
+enum:
+  - STATIC
+  - DYNAMIC
+  - OOB
+  - DECOUPLED
+example: DYNAMIC

@@ -1,0 +1,6 @@
+type: string
+description: Describes whether the transaction is the first or subsequent in the series
+enum:
+  - FIRST
+  - SUBSEQUENT
+example: FIRST

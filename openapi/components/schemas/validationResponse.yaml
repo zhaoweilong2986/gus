@@ -1,0 +1,25 @@
+title: createValidationResponse
+type: object
+properties:
+  validationId:
+    $ref: .\resourceId.yaml
+  merchantId:
+    $ref: .\merchantId.yaml
+  createdAt:
+    $ref: .\createdAt.yaml
+  modifiedAt:
+    $ref: .\modifiedAt.yaml
+  paymentMethod:
+    $ref: .\paymentMethodResponse.yaml
+  validationStatus:
+    $ref: .\validationStatus.yaml
+  transactionDetails:
+    $ref: .\statusDetails.yaml
+  checkResults:
+    $ref: .\checkResults.yaml
+  cardOnFileResponse:
+    $ref: .\cardOnFileResponse.yaml
+  customerId:
+    $ref: .\resourceId.yaml
+  customData:
+    $ref: .\customData.yaml

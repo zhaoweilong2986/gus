@@ -1,0 +1,9 @@
+type: string
+description: >-
+  Date after which no further authorisations shall be performed. This is a
+  required field for recurring transactions, we suggest setting it at a
+  reasonably high value if you don't have a defined expiry date.
+format: date
+minLength: 10
+maxLength: 10
+example: '2019-07-30'

@@ -1,0 +1,52 @@
+type: string
+description: >
+  Indicates the address verification result.  Please refer to the AVS Result
+  Code table for details
+  (https://developer.moneris.com/en/More/Testing/AVS%20Result%20Codes). Possible
+  values are:
+    - "A"
+    - "B"
+    - "C"
+    - "D"
+    - "E"
+    - "F"
+    - "G"
+    - "I"
+    - "K"
+    - "L"
+    - "M"
+    - "N"
+    - "O"
+    - "P"
+    - "R"
+    - "S"
+    - "T"
+    - "U"
+    - "W"
+    - "X"
+    - "Y"
+    - "Z"
+x-extensible-enum:
+  - A
+  - B
+  - C
+  - D
+  - E
+  - F
+  - G
+  - I
+  - K
+  - L
+  - M
+  - 'N'
+  - O
+  - P
+  - R
+  - S
+  - T
+  - U
+  - W
+  - X
+  - 'Y'
+  - Z
+example: A

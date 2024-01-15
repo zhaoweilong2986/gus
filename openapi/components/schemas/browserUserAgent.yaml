@@ -1,0 +1,7 @@
+type: string
+description: >-
+  Exact content of the HTTP user-agent header. Note, If the total length of the
+  User-Agent sent by the browser exceeds 2048 characters, truncate the excess
+  portion.
+maxLength: 2048
+example: Mozilla/5.0 (Linux; {Android Version}; {Build Tag etc.})

@@ -1,0 +1,7 @@
+description: Additional amount details
+type: object
+properties:
+  subTotalAmount:
+    $ref: .\subTotalAmount.yaml
+  tipAmount:
+    $ref: .\tipAmount.yaml

@@ -1,0 +1,6 @@
+description: Version group id
+required: false
+schema:
+  description: Api version group
+  type: string
+  example: '2023-11-01'

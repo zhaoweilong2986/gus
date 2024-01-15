@@ -1,0 +1,16 @@
+type: string
+description: >-
+  Indicates the CVD validation result. The first byte is the numeric CVD
+  indicator sent in the request; the second byte is the response code. Possible
+  response codes are shown in the CVD Result Code table
+  (https://developer.moneris.com/More/Testing/CVD%20Result%20Codes).
+enum:
+  - MATCH
+  - NO_MATCH
+  - NOT_PROCESSED
+  - CVD_NOT_PRESENT
+  - NOT_CVD_PARTICIPANT
+  - AMEX_JCB_MATCH
+  - AMEX_JCB_INVALID
+  - OTHER
+example: MATCH

@@ -1,0 +1,15 @@
+type: object
+description: >-
+  Original amount for the transaction. The value must be in cents. Therefore
+  $10.59 must be sent as 1059
+properties:
+  amount:
+    $ref: .\amount.yaml
+  currency:
+    $ref: .\currency.yaml
+required:
+  - amount
+  - currency
+example:
+  amount: 15000
+  currency: CAD

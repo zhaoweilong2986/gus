@@ -1,0 +1,6 @@
+type: string
+description: |
+  Thirteen character long identification provided to merchants by Moneris.
+minLength: 13
+maxLength: 13
+example: '0123456789101'

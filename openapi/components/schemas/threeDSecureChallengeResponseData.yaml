@@ -1,0 +1,4 @@
+type: string
+description: Response data from the challenge
+maxLength: 200
+example: TBD

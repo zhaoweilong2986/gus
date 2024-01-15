@@ -1,0 +1,26 @@
+title: customerRequest
+type: object
+properties:
+  idempotencyKey:
+    $ref: .\idempotencyKey.yaml
+  firstName:
+    $ref: .\firstName.yaml
+  middleName:
+    $ref: .\middleName.yaml
+  lastName:
+    $ref: .\lastName.yaml
+  companyName:
+    $ref: .\companyName.yaml
+  address:
+    $ref: .\address.yaml
+  shippingAddress:
+    $ref: .\address.yaml
+  phoneNumber:
+    $ref: .\phoneNumber.yaml
+  email:
+    $ref: .\email.yaml
+  customData:
+    $ref: .\customData.yaml
+required:
+  - idempotencyKey
+  - merchant

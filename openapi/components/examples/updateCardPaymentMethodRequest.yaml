@@ -1,0 +1,26 @@
+summary: Card Payment Method request
+value:
+  cardholderInformation:
+    cardholderName: John Doe
+    companyName: SP Ltd
+  contactDetails:
+    phoneNumber: 1-866-319-7450
+    email: moneris@moneris.com
+  billingAddress:
+    unitNumber: 123A
+    streetNumber: '3300'
+    streetName: Bloor Street West
+    city: Toronto
+    province: Ontario
+    postalCode: M8X 2X2
+    country: CA
+  paymentMethodData:
+    paymentMethodType: CARD
+    card:
+      cardNumber: '4444111122223333'
+      expiryMonth: 12
+      expiryYear: 2033
+      cardSecurityCode: 123
+  customData:
+    property1: string
+    property2: string

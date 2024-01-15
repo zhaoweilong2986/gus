@@ -1,0 +1,55 @@
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\prm-common_apiVersion.yaml
+  - $ref: ..\components\parameters\paymentId.yaml
+  - $ref: ..\components\parameters\xMerchantId.yaml
+  - $ref: ..\components\parameters\xStoreId.yaml
+  - $ref: ..\components\parameters\xApiToken.yaml
+get:
+  summary: Retrieve Payment
+  description: Retrieve a payment by its payment Id
+  operationId: getPayment
+  security:
+    - OAuth2:
+        - payment.read
+    - OAuth2:
+        - payment.write
+    - ApiKeyAuth: []
+  tags:
+    - Payments
+  responses:
+    '200':
+      description: The payment corresponding to the provided `payment-id`
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\paymentResponse.yaml
+          examples:
+            succeeded:
+              $ref: ..\components\examples\PurchaseCompletedResponse.yaml
+            authorized:
+              $ref: ..\components\examples\PreauthorizationCompletedResponse.yaml
+            declined:
+              $ref: ..\components\examples\PurchaseDeclinedResponse.yaml
+            declined_retry:
+              $ref: ..\components\examples\PurchaseDeclinedRetryResponse.yaml
+            canceled:
+              $ref: ..\components\examples\PurchaseCanceledResponse.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      $ref: ..\components\responses\notFound.yaml
+    '409':
+      $ref: ..\components\responses\conflict.yaml
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

@@ -1,0 +1,18 @@
+description: Not Found.
+headers:
+  Api-Version:
+    $ref: ..\headers\apiVersion.yaml
+  X-Correlation-Id:
+    $ref: ..\headers\correlationId.yaml
+content:
+  application/problem+json:
+    schema:
+      $ref: ..\schemas\error.yaml
+    example:
+      type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+      title: NOT_FOUND
+      status: 404
+      detail: null
+      instance: /payments/pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+      category: INVALID_REQUEST_ERROR
+      errors: []

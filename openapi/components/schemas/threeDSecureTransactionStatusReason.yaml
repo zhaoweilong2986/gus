@@ -1,0 +1,9 @@
+type: object
+description: >-
+  Provides information on why the Transaction Status field has the specified
+  value.
+properties:
+  threeDSecureTransactionStatusReasonCode:
+    $ref: .\threeDSecurePriorAuthenticationData.yaml
+  threeDSecureTransactionStatusReasonDescription:
+    $ref: .\threeDSecurePriorAuthenticationMethod.yaml

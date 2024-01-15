@@ -1,0 +1,6 @@
+description: The number of requests allowed in the current window.
+required: false
+schema:
+  type: integer
+  format: int64
+example: 0

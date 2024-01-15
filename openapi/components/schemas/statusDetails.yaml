@@ -1,0 +1,14 @@
+type: object
+description: Additional details about the transaction outcome.
+properties:
+  transactionUniqueId:
+    type: string
+    description: Realtime transaction identifier from the host.
+  isoResponseCode:
+    $ref: .\iso.yaml
+  responseCode:
+    $ref: .\responseCode.yaml
+  message:
+    $ref: .\message.yaml
+  ecommerceIndicator:
+    $ref: .\ecommerceIndicator.yaml

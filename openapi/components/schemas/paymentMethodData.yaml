@@ -1,0 +1,14 @@
+title: paymentMethodData
+type: object
+description: Payment method details
+properties:
+  paymentMethodType:
+    $ref: .\paymentMethodType.yaml
+  card:
+    $ref: .\paymentMethodCard.yaml
+  temporaryToken:
+    $ref: .\token.yaml
+  permanentToken:
+    $ref: .\token.yaml
+required:
+  - paymentMethodType

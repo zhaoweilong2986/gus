@@ -1,0 +1,20 @@
+description: List of Payment Methods
+type: object
+title: paymentMethodResponseList
+properties:
+  data:
+    description: Payment Method list
+    type: array
+    items:
+      type: object
+      $ref: .\paymentMethodResponse.yaml
+  self:
+    $ref: .\self.yaml
+  first:
+    $ref: .\first.yaml
+  last:
+    $ref: .\last.yaml
+  next:
+    $ref: .\next.yaml
+  previous:
+    $ref: .\previous.yaml

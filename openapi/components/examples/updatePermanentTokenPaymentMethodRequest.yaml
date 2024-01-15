@@ -1,0 +1,10 @@
+summary: Permanent Token Payment Method request
+value:
+  cardholderInformation: null
+  contactDetails: null
+  billingAddress: null
+  paymentMethodData:
+    paymentMethodType: PERMANENT_TOKEN
+    permanentToken: HCUeCFtXJfEZSSUqvFRu9
+  customData:
+    property1: string

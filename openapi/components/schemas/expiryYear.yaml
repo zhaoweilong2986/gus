@@ -1,0 +1,6 @@
+type: integer
+format: int32
+description: Card expiration year. Format must be YYYY
+minimum: 2022
+maximum: 9999
+example: 2023

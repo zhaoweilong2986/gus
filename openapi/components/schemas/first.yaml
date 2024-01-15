@@ -1,0 +1,3 @@
+description: Pagination link pointing to the first page.
+type: string
+format: uri

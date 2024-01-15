@@ -1,0 +1,15 @@
+title: completionRequest
+type: object
+properties:
+  idempotencyKey:
+    $ref: .\idempotencyKey.yaml
+  invoiceNumber:
+    $ref: .\invoiceNumber.yaml
+  customData:
+    $ref: .\customData.yaml
+  amount:
+    description: Amount for the transaction
+    $ref: .\transactionAmount.yaml
+required:
+  - idempotencyKey
+  - merchantId

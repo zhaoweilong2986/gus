@@ -1,0 +1,58 @@
+summary: Validation Declined with Retry
+value:
+  validationId: vi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+  merchantId: '0123456789101'
+  orderId: 1q2w3e4r5t6t78
+  invoiceNumber: 1a2s3d45v6
+  transactionDateTime: '2019-07-30T06:43:40.252Z'
+  createdAt: '2019-07-30T06:43:40.252Z'
+  modifiedAt: null
+  customerId: ci0105ARZ3NDEKTSV4RRFFQ69G5FAV
+  paymentMethod:
+    paymentMethodId: pm0105ARZ3NDEKTSV4RRFFQ69G5FAV
+    merchantId: '0123456789101'
+    cardholderInformation:
+      cardholderName: John Doe
+      companyName: SP Ltd
+    contactDetails: null
+    billingAddress:
+      unitNumber: 123A
+      streetNumber: '3300'
+      streetName: Bloor Street West
+      city: Toronto
+      province: Ontario
+      postalCode: M8X 2X2
+      country: CA
+    paymentMethodType: CARD
+    paymentMethodInformation:
+      cardInformation:
+        bankIdentificationNumber: '123456'
+        lastFour: '1234'
+        expiryMonth: 1
+        expiryYear: 2025
+        cardBrand: MASTERCARD
+        cardType: CREDIT
+        cardFingerprint: 1Q2W3E4r5t6rfwewerwewrrw
+        issuer: RBC
+      paymentAccountReference: '11112222333344445555666677778'
+    paymentMethodStored: DO_NOT_STORE
+    createdAt: '2019-07-30T06:43:40.252Z'
+    modifiedAt: null
+    customData:
+      property1: string
+      property2: string
+  validationStatus: DECLINED_RETRY
+  transactionDetails:
+    transactionUniqueId: 938c2cc0dcc05f2b68c4287040cfcf71
+    isoResponseCode: 416
+    responseCode: 79
+    message: Life cycle declines.
+    ecommerceIndicator: AUTHENTICATED_ECOMMERCE
+  checkResults:
+    addressVerificationServiceResultCode: M
+    cardSecurityCodeResultCode: MATCH
+    threeDSecureAuthenticationValueResultCode: VISA_CAVV_PASSED_VALIDATION_ATTEMPTED
+  cardOnFileResponse: null
+  customData:
+    property1: string
+    property2: string

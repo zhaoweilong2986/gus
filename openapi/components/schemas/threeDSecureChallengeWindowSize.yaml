@@ -1,0 +1,16 @@
+type: string
+description: >
+  Dimensions of the challenge window that has been displayed to the Cardholder
+  in the browser.
+    - **X_SMALL**: 250 x 400
+    - **SMALL**: 390 x 400
+    - **MEDIUM**: 500 x 600
+    - **LARGE**: 600 x 400
+    - **FULL_SCREEN**: Full Screen
+enum:
+  - X_SMALL
+  - SMALL
+  - MEDIUM
+  - LARGE
+  - FULL_SCREEN
+example: FULL_SCREEN

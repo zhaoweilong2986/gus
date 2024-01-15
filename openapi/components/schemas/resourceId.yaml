@@ -1,0 +1,9 @@
+type: string
+description: >-
+  A Unique Identifier that is used to identify API resources. This field is
+  required for any future follow-on transactions such as Refunds, Corrections,
+  Completions, Reversals, etc.
+pattern: ^[A-Za-z]{2}\d{2}[A-Za-z0-9]{26}$
+minLength: 30
+maxLength: 30
+example: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV

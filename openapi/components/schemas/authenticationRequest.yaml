@@ -1,0 +1,88 @@
+title: authenticationRequest
+description: >-
+  Use the 3DS Authentication request to start the validation process of the card
+  and cardholder identity. This request supports all 3DS authentication methods,
+  including 3DS Requestor Initiated (3RI) and Decoupled Authentication. The
+  fields device_channel and message_category control the type of 3DS request
+  made. To perform a standard 3DS Authentication with a cardholder browser
+  experience, send device_channel = 02 for BRW. The result of this request
+  determines whether the card supports 3DS features and, if supported, whether
+  the transaction uses a frictionless or challenge flow. To perform a 3DS
+  Requestor Initiated Authentication without a cardholder browser experience,
+  send device_channel = 03 for 3RI. Any fields related to the browser’s
+  challenge prompt are no longer required, but other conditional fields for 3RI
+  become mandatory.
+type: object
+properties:
+  idempotencyKey:
+    $ref: .\idempotencyKey.yaml
+  cardLookupId:
+    $ref: .\resourceId.yaml
+  orderId:
+    $ref: .\orderId.yaml
+  amount:
+    $ref: .\transactionAmount.yaml
+  cardholderName:
+    $ref: .\cardholderName.yaml
+  cardholderEmail:
+    $ref: .\email.yaml
+  cardholderPhoneNumber:
+    $ref: .\phoneNumber.yaml
+  shippingAddress:
+    $ref: .\address.yaml
+  billingAddress:
+    $ref: .\address.yaml
+  paymentMethodId:
+    $ref: .\resourceId.yaml
+  paymentMethod:
+    $ref: .\paymentMethodRequest.yaml
+  threeDSecureMessageCategory:
+    $ref: .\threeDSecureMessageCategory.yaml
+  threeDSecureDeviceChannel:
+    $ref: .\threeDSecureDeviceChannel.yaml
+  threeDSecureRequestType:
+    $ref: .\threeDSecureRequestType.yaml
+  threeDSecureRecurringFrequency:
+    $ref: .\threeDSecureRecurringFrequency.yaml
+  threeDSecureRecurringExpiry:
+    $ref: .\threeDSecureRecurringExpiry.yaml
+  threeDSecureRequestorInitiatedIndicator:
+    $ref: .\threeDSecureRequestorInitiatedIndicator.yaml
+  threeDSecurePriorAuthenticationInformation:
+    $ref: .\threeDSecurePriorAuthenticationInformation.yaml
+  threeDSecureNotificationUrl:
+    $ref: .\threeDSecureNotificationUrl.yaml
+  threeDSecureCompletionIndicator:
+    $ref: .\threeDSecureCompletionIndicator.yaml
+  threeDSecureChallengeRequested:
+    $ref: .\threeDSecureChallengeRequested.yaml
+  threeDSecureChallengeWindowSize:
+    $ref: .\threeDSecureChallengeWindowSize.yaml
+  browserIpAddress:
+    $ref: .\ipv4.yaml
+  browserUserAgent:
+    $ref: .\browserUserAgent.yaml
+  browserJavaEnabled:
+    $ref: .\browserJavaEnabled.yaml
+  browserJavascriptEnabled:
+    $ref: .\browserJavascriptEnabled.yaml
+  browserScreenHeight:
+    $ref: .\browserScreenHeight.yaml
+  browserScreenWidth:
+    $ref: .\browserScreenWidth.yaml
+  browserLanguage:
+    $ref: .\language.yaml
+required:
+  - merchantId
+  - amount
+  - billingAddress
+  - browserIpAddress
+  - browserScreenHeight
+  - browserScreenWidth
+  - cardholderEmail
+  - cardholderName
+  - cardholderPhoneNumber
+  - idempotencyKey
+  - orderId
+  - threeDSecureDeviceChannel
+  - threeDSecureMessageCategory

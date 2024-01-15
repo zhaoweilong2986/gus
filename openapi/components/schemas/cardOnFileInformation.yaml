@@ -1,0 +1,19 @@
+type: object
+description: 'Contains fields related to the Credential on File (CoF) '
+properties:
+  paymentIndicator:
+    $ref: .\paymentIndicator.yaml
+  paymentInformation:
+    $ref: .\paymentInformation.yaml
+  issuerId:
+    $ref: .\issuerId.yaml
+  originalAmount:
+    $ref: .\originalAmount.yaml
+required:
+  - paymentIndicator
+  - paymentInformation
+  - issuerId
+example:
+  paymentIndicator: CUSTOMER_INITIATED
+  paymentInformation: FIRST
+  issuerId: 123asd

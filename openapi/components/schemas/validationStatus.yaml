@@ -1,0 +1,9 @@
+type: string
+description: Validation Status description.
+enum:
+  - CANCELED
+  - DECLINED
+  - DECLINED_RETRY
+  - PROCESSING
+  - SUCCEEDED
+example: SUCCEEDED

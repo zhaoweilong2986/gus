@@ -1,0 +1,6 @@
+in: path
+name: payment-id
+description: The unique identifier of the payment
+required: true
+schema:
+  $ref: ..\schemas\resourceId.yaml

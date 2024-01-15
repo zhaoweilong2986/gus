@@ -1,0 +1,8 @@
+type: string
+description: >-
+  Merchant-defined transaction identifier that must be unique for every
+  Purchase, Pre-Authorization and Independent Refund transaction. No two
+  transactions of these types may have the same order ID.
+minLength: 1
+maxLength: 50
+example: 1q2w3e4r5t6t78

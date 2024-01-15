@@ -1,0 +1,5 @@
+type: string
+description: Street name
+minLength: 1
+maxLength: 100
+example: Bloor

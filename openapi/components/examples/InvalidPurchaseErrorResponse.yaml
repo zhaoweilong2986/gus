@@ -1,0 +1,8 @@
+summary: Purchase already completed
+value:
+  type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+  title: INVALID_STATE
+  status: 400
+  detail: Invalid purchase state
+  instance: /payments/20c3ee41-2560-4645-b84f-631fb08819de
+  category: INVALID_REQUEST_ERROR

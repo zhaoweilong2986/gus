@@ -1,0 +1,5 @@
+type: string
+description: Customer's credit / debit card number (Primary Account Number).
+minLength: 14
+maxLength: 16
+example: '4444111122223333'

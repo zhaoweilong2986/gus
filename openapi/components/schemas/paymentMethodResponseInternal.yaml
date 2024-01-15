@@ -1,0 +1,23 @@
+title: Payment Method Response for internal
+type: object
+properties:
+  paymentMethodResponse:
+    $ref: .\paymentMethodResponse.yaml
+  paymentMethodData:
+    $ref: .\paymentMethodData.yaml
+  paymentMethodStatus:
+    type: string
+    description: Payment Status description.
+    enum:
+      - ACTIVE
+      - EXPIRED
+    example: ACTIVE
+  storageType:
+    type: string
+    description: Payment Method Storage Type.
+    enum:
+      - PERMANENT
+      - TEMPORARY
+    example: PERMANENT
+required:
+  - paymentMethodId

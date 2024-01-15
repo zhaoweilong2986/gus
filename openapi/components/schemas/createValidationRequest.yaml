@@ -1,0 +1,29 @@
+title: Creates a Validation Request
+type: object
+properties:
+  idempotencyKey:
+    $ref: .\idempotencyKey.yaml
+  paymentMethodId:
+    $ref: .\resourceId.yaml
+  paymentMethod:
+    $ref: .\paymentMethodRequest.yaml
+  storePaymentMethod:
+    $ref: .\storePaymentMethod.yaml
+  customerId:
+    $ref: .\resourceId.yaml
+  cardOnFileInformation:
+    $ref: .\cardOnFileInformation.yaml
+  dynamicDescriptor:
+    $ref: .\dynamicDescriptor.yaml
+  threeDSecureAuthenticationId:
+    $ref: .\resourceId.yaml
+  threeDSecureData:
+    $ref: .\threeDSecureData.yaml
+  ecommerceIndicator:
+    description: Describes the category of e-commerce transaction being processed.
+    $ref: .\ecommerceIndicator.yaml
+  customData:
+    $ref: .\customData.yaml
+required:
+  - idempotencyKey
+  - merchantId

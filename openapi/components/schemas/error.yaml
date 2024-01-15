@@ -1,0 +1,73 @@
+description: Error response details.
+properties:
+  type:
+    description: >
+      A URI reference that identifies the problem type.  Ideally it should be a
+      stable URL to the documentation of the details about this type of error
+      but it also can be a URN.  If nothing can be provided, a "about:blank"
+      value is returned.
+    type: string
+    format: uri
+    example: https://developer.moneris.com/docs/error-codes
+  title:
+    description: >
+      A short, human-readable summary of the problem type.   It SHOULD NOT
+      change from occurrence to occurrence of the problem, except for purposes
+      of localization
+    type: string
+    example: INSUFFICIENT_FUNDS
+    nullable: true
+  status:
+    description: |
+      it conveys the HTTP status code used for the convenience of the consumer.
+    type: integer
+    format: int32
+    minimum: 100
+    maximum: 505
+    nullable: true
+  detail:
+    description: >
+      A human-readable message providing more details about the error. For card
+      errors, these messages can be shown to your users.
+    type: string
+    example: Funds are insufficient to execute the operation.
+    nullable: true
+  instance:
+    description: >
+      A URI reference that identifies the specific occurrence of the problem.
+      Typically, this resolves to a resource that might include more details
+      about the problem.
+    type: string
+    example: /payments/12f3e0a8-1d68-2b86-dd30-4ca51bb66e10
+    format: uri
+    nullable: true
+  category:
+    description: |
+      The type of error returned. 
+       - `API_ERROR`: This occurs due to an intermittent issue.  
+       - `IDEMPOTENCY_ERROR`: The idempotency key has already been used.
+       - `INVALID_REQUEST_ERROR`: The data provided in the request is invalid.
+       - `DECLINED_ERROR`: Transaction was declined by the issuer.
+       - `UNAUTHORIZED_ERROR`: Caller not authenticated, or not allowed to execute the current operation.
+       - `INTERNAL_SERVER_ERROR`: An internal issue with our servers has occured.
+    enum:
+      - API_ERROR
+      - IDEMPOTENCY_ERROR
+      - INVALID_REQUEST_ERROR
+      - DECLINED_ERROR
+      - UNAUTHORIZED_ERROR
+      - INTERNAL_SERVER_ERROR
+    type: string
+    example: DECLINED_ERROR
+  errors:
+    type: array
+    description: List of validation errors when error category is INVALID_REQUEST_ERROR.
+    items:
+      type: object
+      $ref: .\parameterError.yaml
+    example:
+      - parameter: address.postalCode
+        value: MAP3J8
+        reasonCode: invalid_format
+title: API Error
+type: object

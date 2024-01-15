@@ -1,0 +1,22 @@
+type: string
+description: >
+  Indicates the Transaction result.  For more information about this field,
+  please review
+  https://docs.3dsecure.io/3dsv2/specification_220.html#attr-ARes-transStatus
+    - **AUTHENTICATED**: Authentication/ Account Verification Successful.
+    - **AUTHENTICATION_ATTEMPTED**: Attempts Processing Performed; Not Authenticated/Verified , but a proof of attempted authentication/verification is provided.
+    - **CHALLENGE_AUTHENTICATION_REQUIRED**: Challenge Required; Additional authentication is required using the `challengeUrl` and `challengeData`.
+    - **CHALLENGE_DECOUPLED_AUTHENTICATION_CONFIRMED**: Challenge Required; Decoupled Authentication confirmed. 
+    - **TECHNICAL_ISSUE**: Authentication/ Account Verification Could Not Be Performed; Technical or other problem.
+    - **NOT_AUTHENTICATED**: Not Authenticated /Account Not Verified; Transaction denied.
+    - **REJECTED**: Authentication/ Account Verification Rejected; Issuer is rejecting authentication/verification and request that authorisation not be attempted.
+    - **CHALLENGE_PREFERENCE_ACKNOWLEDGED**: Informational Only; 3DS Requestor challenge preference acknowledged.
+enum:
+  - AUTHENTICATED
+  - AUTHENTICATION_ATTEMPTED
+  - CHALLENGE_AUTHENTICATION_REQUIRED
+  - CHALLENGE_DECOUPLED_AUTHENTICATION_CONFIRMED
+  - TECHNICAL_ISSUE
+  - NOT_AUTHENTICATED
+  - REJECTED
+  - CHALLENGE_PREFERENCE_ACKNOWLEDGED

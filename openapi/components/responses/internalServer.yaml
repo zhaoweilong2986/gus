@@ -1,0 +1,18 @@
+description: Unexpected error.
+headers:
+  Api-Version:
+    $ref: ..\headers\apiVersion.yaml
+  X-Correlation-Id:
+    $ref: ..\headers\correlationId.yaml
+content:
+  application/problem+json:
+    schema:
+      $ref: ..\schemas\error.yaml
+    example:
+      type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+      title: INTERNAL_SERVER_ERROR
+      status: 500
+      detail: null
+      instance: null
+      category: INTERNAL_SERVER_ERROR
+      errors: []

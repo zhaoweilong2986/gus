@@ -1,0 +1,5 @@
+type: string
+description: City
+minLength: 1
+maxLength: 50
+example: Toronto

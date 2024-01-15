@@ -1,0 +1,3 @@
+type: boolean
+description: Indicates whether Java is enabled in the browser
+example: 'true'

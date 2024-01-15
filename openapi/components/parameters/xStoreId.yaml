@@ -1,0 +1,6 @@
+in: header
+name: x-store-id
+description: Moneris Store Id
+required: true
+schema:
+  $ref: ..\schemas\storeId.yaml

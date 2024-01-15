@@ -1,0 +1,15 @@
+title: challengeFlowRequest
+description: >-
+  The point of the 3-D Secure flow is to verify that the true cardholder is a
+  part of the authorization. The challenge flow is used to present a way of
+  authenticating the cardholder using e.g. OTP or a federated identification
+  method.
+type: object
+properties:
+  idempotencyKey:
+    $ref: .\idempotencyKey.yaml
+  threeDSecureChallengeResponseData:
+    $ref: .\threeDSecureChallengeResponseData.yaml
+required:
+  - idempotencyKey
+  - threeDSecureChallengeResponseData

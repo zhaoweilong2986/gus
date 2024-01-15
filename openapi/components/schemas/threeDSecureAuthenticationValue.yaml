@@ -1,0 +1,13 @@
+type: string
+description: >-
+  The Cardholder Authentication Verification Value (CAVV), the Accountholder
+  Authentication Value (AAV), and the American Express Verification Value
+  (AEVV), are the values that allows Visa, Mastercard and American Express to
+  validate the integrity of the Visa Secure, Mastercard Identity Check and
+  American Express SafeKey transaction data. These values are passed back from
+  the issuer to the merchant after the authentication has taken place. The
+  merchant then integrates the CAVV/AAV/AEVV value into the authorization
+  request using the Purchase or Pre-Authorization with 3-D Secure transaction
+  type.
+maxLength: 50
+example: '00000109260000719349'

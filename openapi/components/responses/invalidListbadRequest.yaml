@@ -1,0 +1,13 @@
+description: Bad Request.
+headers:
+  Api-Version:
+    $ref: ..\headers\apiVersion.yaml
+  X-Correlation-Id:
+    $ref: ..\headers\correlationId.yaml
+content:
+  application/problem+json:
+    schema:
+      $ref: ..\schemas\error.yaml
+    examples:
+      idempotency_error:
+        $ref: ..\examples\InvalidListRequestErrorResponse.yaml

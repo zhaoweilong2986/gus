@@ -1,0 +1,89 @@
+description: |
+  This API allows to manage past and recurring customers.
+  Very useful when tracking and managing charges belonging to the same customer.
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\prm-common_apiVersion.yaml
+  - $ref: ..\components\parameters\xMerchantId.yaml
+  - $ref: ..\components\parameters\xStoreId.yaml
+  - $ref: ..\components\parameters\xApiToken.yaml
+get:
+  summary: List Customers
+  description: Returns a paginated list of customers.
+  operationId: getCustomers
+  security:
+    - OAuth2:
+        - customer.read
+    - OAuth2:
+        - customer.write
+    - ApiKeyAuth: []
+  tags:
+    - Customers
+  parameters:
+    - $ref: ..\components\parameters\pageBeforeCursor.yaml
+    - $ref: ..\components\parameters\pageLimit.yaml
+    - $ref: ..\components\parameters\createdFrom.yaml
+    - $ref: ..\components\parameters\createdTo.yaml
+  responses:
+    '200':
+      description: List of all customers
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\customerResponseList.yaml
+    '400':
+      $ref: ..\components\responses\invalidListbadRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml
+post:
+  summary: Create Customer
+  description: This operation is used to created a new customer.
+  operationId: createCustomers
+  security:
+    - OAuth2:
+        - customer.write
+    - ApiKeyAuth: []
+  tags:
+    - Customers
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\createCustomerRequest.yaml
+  responses:
+    '201':
+      description: Customer operation result response
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\customerResponse.yaml
+    '400':
+      $ref: ..\components\responses\badRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '409':
+      $ref: ..\components\responses\conflict.yaml
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

@@ -1,0 +1,163 @@
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\prm-common_apiVersion.yaml
+  - $ref: ..\components\parameters\customerId.yaml
+  - $ref: ..\components\parameters\xMerchantId.yaml
+  - $ref: ..\components\parameters\xStoreId.yaml
+  - $ref: ..\components\parameters\xApiToken.yaml
+get:
+  summary: Retrieve Customer
+  description: Retrieve a customer by their Id.
+  operationId: getCustomer
+  security:
+    - OAuth2:
+        - customer.read
+    - OAuth2:
+        - customer.write
+    - ApiKeyAuth: []
+  tags:
+    - Customers
+  responses:
+    '200':
+      description: The customer corresponding to the provided `customerId`
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\customerResponse.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      description: Customer not found
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error.yaml
+          example:
+            type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+            title: NOT_FOUND
+            status: 404
+            detail: null
+            instance: /customers/ci0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            category: INVALID_REQUEST_ERROR
+            errors: []
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml
+put:
+  summary: Update Customer
+  description: Updates customer's details such as name, address etc...
+  operationId: updateCustomer
+  security:
+    - OAuth2:
+        - customer.write
+    - ApiKeyAuth: []
+  tags:
+    - Customers
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\customerRequest.yaml
+  responses:
+    '200':
+      description: Customer updated successfully.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\customerResponse.yaml
+    '400':
+      $ref: ..\components\responses\badRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      description: Customer not found
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error.yaml
+          example:
+            type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+            title: NOT_FOUND
+            status: 404
+            detail: null
+            instance: /customers/ci0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            category: INVALID_REQUEST_ERROR
+            errors: []
+    '409':
+      $ref: ..\components\responses\concurrencyConflict.yaml
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml
+delete:
+  summary: Delete Customer
+  description: Delete a customer by their Id
+  operationId: deleteCustomer
+  security:
+    - OAuth2:
+        - customer.write
+    - ApiKeyAuth: []
+  tags:
+    - Customers
+  responses:
+    '204':
+      description: Customer deleted successfully.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      description: Customer not found
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error.yaml
+          example:
+            type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+            title: NOT_FOUND
+            status: 404
+            detail: null
+            instance: /customers/ci0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            category: INVALID_REQUEST_ERROR
+            errors: []
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

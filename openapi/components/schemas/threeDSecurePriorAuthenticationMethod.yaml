@@ -1,0 +1,10 @@
+type: string
+description: >-
+  Mechanism used by the Cardholder to previously authenticate to the 3DS
+  Requestor.
+enum:
+  - FRICTIONLESS_AUTHENTICATION_OCCURRED_BY_ACS
+  - CARDHOLDER_CHALLENGE_OCCURRED_BY_ACS
+  - AVS_VERIFIED
+  - OTHER_ISSUER_METHODS
+example: AVS_VERIFIED

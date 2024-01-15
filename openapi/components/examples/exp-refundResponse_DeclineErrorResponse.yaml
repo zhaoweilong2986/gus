@@ -1,0 +1,9 @@
+summary: Refund declined
+value:
+  type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+  title: EXPIRED CARD
+  status: 400
+  detail: 051-54 - Expired Card
+  instance: /refunds/20c3ee41-2560-4645-b84f-631fb08819de
+  category: DECLINED_ERROR
+  errors: []

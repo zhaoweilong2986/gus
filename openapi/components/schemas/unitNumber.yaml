@@ -1,0 +1,5 @@
+type: string
+description: Unit number
+minLength: 1
+maxLength: 19
+example: 123A

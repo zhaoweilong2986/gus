@@ -1,0 +1,6 @@
+type: string
+format: uri
+description: Returns the URL for the Device Fingerprinting step.
+minLength: 1
+maxLength: 256
+example: https://developer.moneris.com/

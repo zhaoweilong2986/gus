@@ -1,0 +1,6 @@
+type: string
+description: >-
+  Required if sending a 3-D Secure version 2.0+ transaction. Default to V2.1 if
+  no value is provided.
+maxLength: 10
+example: '2.2'

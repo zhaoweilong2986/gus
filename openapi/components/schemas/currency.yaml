@@ -1,0 +1,7 @@
+type: string
+description: >-
+  Three letter currency code based on the ISO 4217 standard. See
+  https://en.wikipedia.org/wiki/ISO_4217
+minLength: 3
+maxLength: 4
+example: CAD

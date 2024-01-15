@@ -1,0 +1,60 @@
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\paymentMethodId.yaml
+  - $ref: ..\components\parameters\xMerchantId.yaml
+  - $ref: ..\components\parameters\xStoreId.yaml
+  - $ref: ..\components\parameters\xApiToken.yaml
+get:
+  summary: Retrieve a Payment Method by Id internally which returns some extra info
+  description: Retrieve a Payment Method by Id internally which returns some extra info
+  operationId: getPaymentMethodInternal
+  security:
+    - ApiKeyAuth: []
+  tags:
+    - paymentMethodInternal
+  responses:
+    '200':
+      description: Get payment method internal
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\paymentMethodResponseInternal.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      $ref: ..\components\responses\notFound.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml
+put:
+  summary: Update payment method internal
+  description: Update payment method internal
+  operationId: updatePaymentMethodInternal
+  security:
+    - ApiKeyAuth: []
+  tags:
+    - paymentMethodInternal
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\paymentMethodRequestInternal.yaml
+  responses:
+    '200':
+      description: Update payment method internal
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\paymentMethodResponseInternal.yaml
+    '400':
+      $ref: ..\components\responses\badRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      $ref: ..\components\responses\notFound.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

@@ -1,0 +1,8 @@
+value:
+  type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+  title: IDEMPOTENCY_KEY_ALREADY_EXISTS
+  status: 409
+  detail: null
+  instance: null
+  category: IDEMPOTENCY_ERROR
+  errors: []

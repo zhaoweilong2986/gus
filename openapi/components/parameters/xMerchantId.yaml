@@ -1,0 +1,9 @@
+in: header
+name: x-merchant-id
+description: >
+  Thirteen character long identification provided to merchants by Moneris. 
+  Required when caller is impersonating or submitting a request on behalf of a
+  Merchant.
+required: true
+schema:
+  $ref: ..\schemas\merchantId.yaml

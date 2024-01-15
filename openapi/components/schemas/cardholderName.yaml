@@ -1,0 +1,5 @@
+type: string
+description: Cardholder name
+minLength: 1
+maxLength: 60
+example: John Doe

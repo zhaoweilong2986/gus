@@ -1,0 +1,7 @@
+type: object
+description: 'Contains fields related to the Credential on File (CoF) '
+properties:
+  originalAmount:
+    $ref: .\originalAmount.yaml
+  issuerId:
+    $ref: .\issuerId.yaml

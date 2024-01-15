@@ -1,0 +1,45 @@
+title: paymentRequest
+type: object
+properties:
+  idempotencyKey:
+    $ref: .\idempotencyKey.yaml
+  orderId:
+    $ref: .\orderId.yaml
+  invoiceNumber:
+    $ref: .\invoiceNumber.yaml
+  amount:
+    description: This amount excludes surcharge, application and converience fee.
+    $ref: .\transactionAmount.yaml
+  amountDetails:
+    $ref: .\amountDetails.yaml
+  customerId:
+    $ref: .\resourceId.yaml
+  paymentMethodId:
+    $ref: .\resourceId.yaml
+  paymentMethod:
+    $ref: .\paymentMethodRequest.yaml
+  storePaymentMethod:
+    $ref: .\storePaymentMethod.yaml
+  ecommerceIndicator:
+    description: Describes the category of e-commerce transaction being processed.
+    $ref: .\ecommerceIndicator.yaml
+  automaticCapture:
+    $ref: .\automaticCapture.yaml
+  customData:
+    $ref: .\customData.yaml
+  dynamicDescriptor:
+    $ref: .\dynamicDescriptor.yaml
+  threeDSecureAuthenticationId:
+    $ref: .\resourceId.yaml
+  threeDSecureData:
+    $ref: .\threeDSecureData.yaml
+  cardOnFileInformation:
+    $ref: .\cardOnFileInformation.yaml
+  ipv4:
+    $ref: .\ipv4.yaml
+  ipv6:
+    $ref: .\ipv6.yaml
+required:
+  - idempotencyKey
+  - merchantId
+  - amount

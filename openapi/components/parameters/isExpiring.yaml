@@ -1,0 +1,8 @@
+name: is_expiring
+in: query
+description: >-
+  Returns payment methods that have cards expiring during the current and next
+  calendar month.
+required: false
+schema:
+  type: boolean

@@ -1,0 +1,6 @@
+type: integer
+format: int32
+description: Total width of the cardholder’s screen in pixels.
+minimum: 0
+maximum: 999999
+example: 1920

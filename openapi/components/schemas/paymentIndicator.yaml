@@ -1,0 +1,9 @@
+type: string
+description: Indicates the current or intended use of the credentials
+enum:
+  - UNSCHEDULED_COF
+  - RECURRING
+  - MERCHANT_INITIATED
+  - VARIABLE_RECURRING
+  - CUSTOMER_INITIATED
+example: UNSCHEDULED_COF

@@ -1,0 +1,6 @@
+type: integer
+format: int32
+description: Total height of the Cardholder’s screen in pixels.
+minimum: 0
+maximum: 999999
+example: 1080

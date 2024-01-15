@@ -1,0 +1,12 @@
+type: string
+description: >
+  Indicates whether 3DS Card Lookup was successfully completed.  A successful
+  Card Lookup increases the chances of a frictionless card authentication.
+    - **SUCCESS**: Successfully completed.
+    - **FAILURE**: 3DS Card Lookup attempted, but failed.
+    - **UNAVAILABLE**: Unavailable or not attempted.
+enum:
+  - SUCCESS
+  - FAILURE
+  - UNAVAILABLE
+example: SUCCESS

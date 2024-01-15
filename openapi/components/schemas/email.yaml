@@ -1,0 +1,6 @@
+type: string
+format: iso-639
+description: Customer's email address. See https://www.rfc-editor.org/rfc/rfc5322
+minLength: 1
+maxLength: 320
+example: moneris@moneris.com

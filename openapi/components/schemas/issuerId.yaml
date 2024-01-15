@@ -1,0 +1,7 @@
+type: string
+description: >-
+  Unique identifier for the cardholder's stored credentials. Sent back in the
+  response from the card brand when processing a Credential on File transaction.
+minLength: 1
+maxLength: 15
+example: A

@@ -1,0 +1,5 @@
+type: string
+description: Customer middle name
+minLength: 1
+maxLength: 30
+example: J.

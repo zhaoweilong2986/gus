@@ -1,0 +1,9 @@
+description: >-
+  Merchant can send custom meta data with the transaction in this object.
+  Moneris will echo these values back in response.
+type: object
+additionalProperties:
+  type: string
+  minLength: 1
+  maxLength: 50
+maxProperties: 10

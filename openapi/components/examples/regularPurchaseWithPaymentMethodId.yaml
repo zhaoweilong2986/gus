@@ -1,0 +1,26 @@
+summary: Regular Purchase With Payment Method Id
+value:
+  idempotencyKey: 5d8f812e-9969-4885-85bb-d03948eccac1
+  orderId: 1q2w3e4r5t6t78
+  invoiceNumber: 1a2s3d45v6
+  amount:
+    amount: 16000
+    currency: CAD
+  amountDetails:
+    subTotalAmount:
+      amount: 14000
+      currency: CAD
+    tipAmount:
+      amount: 150
+      currency: CAD
+  customerId: ci0105ARZ3NDEKTSV4RRFFQ69G5FAV
+  paymentMethodId: pm0105ARZ3NDEKTSV4RRFFQ69G5FAV
+  storePaymentMethod: DO_NOT_STORE
+  ecommerceIndicator: AUTHENTICATED_ECOMMERCE
+  automaticCapture: true
+  customData:
+    property1: string
+    property2: string
+  dynamicDescriptor: moneris
+  ipv4: 192.0.2.146
+  ipv6: 2345:0425:2CA1:0000:0000:0567:5673:23b5

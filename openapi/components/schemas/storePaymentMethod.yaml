@@ -1,0 +1,9 @@
+description: >-
+  Store this payment method created through this payment for future use. Store
+  for cardholder or merchant initiated (recurring) transactions.
+type: string
+default: DO_NOT_STORE
+enum:
+  - DO_NOT_STORE
+  - CARDHOLDER_INITIATED
+  - MERCHANT_INITIATED

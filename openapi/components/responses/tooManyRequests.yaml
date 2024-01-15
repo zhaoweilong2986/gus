@@ -1,0 +1,14 @@
+description: Too Many Requests
+headers:
+  Api-Version:
+    $ref: ..\headers\apiVersion.yaml
+  X-Correlation-Id:
+    $ref: ..\headers\correlationId.yaml
+  X-RateLimit-Limit:
+    $ref: ..\headers\rateLimitCount.yaml
+  X-RateLimit-Remaining:
+    $ref: ..\headers\rateLimitRemaining.yaml
+  X-RateLimit-Reset:
+    $ref: ..\headers\rateLimitReset.yaml
+  Retry-After:
+    $ref: ..\headers\rateLimitReset.yaml

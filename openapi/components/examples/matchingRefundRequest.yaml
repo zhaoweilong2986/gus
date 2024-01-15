@@ -1,0 +1,18 @@
+summary: Matching Refund
+value:
+  idempotencyKey: 5d8f812e-9969-4885-85bb-d03948eccac2
+  paymentId: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+  orderId: 1q2w3e4r5t6t78
+  invoiceNumber: 1a2s3d45v6
+  refundAmount:
+    amount: 1600
+    currency: CAD
+  dynamicDescriptor: moneris
+  cofInformation: null
+  ipv4: 104.75.173.179
+  ipv6: 2600:1401:2::8a
+  ecommerceIndicator: AUTHENTICATED_ECOMMERCE
+  reason: Defective product
+  customData:
+    property1: string
+    property2: string

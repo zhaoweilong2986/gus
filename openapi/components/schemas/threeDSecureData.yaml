@@ -1,0 +1,11 @@
+description: Data related to 3-D Secure
+type: object
+properties:
+  threeDSecureAuthenticationValue:
+    $ref: .\threeDSecureAuthenticationValue.yaml
+  threeDSecureVersion:
+    $ref: .\threeDSecureVersion.yaml
+  threeDSecureServerTransactionId:
+    $ref: .\threeDSecureServerTransactionId.yaml
+  threeDSecureDirectoryServerTransactionId:
+    $ref: .\threeDSecureDirectoryServerTransactionId.yaml

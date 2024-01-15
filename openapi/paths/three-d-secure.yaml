@@ -1,0 +1,63 @@
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\prm-common_apiVersion.yaml
+  - $ref: ..\components\parameters\xMerchantId.yaml
+  - $ref: ..\components\parameters\xStoreId.yaml
+  - $ref: ..\components\parameters\xApiToken.yaml
+post:
+  summary: Create Authentication
+  description: >
+    This operation is used to create an Authentication request. 
+
+    The authentication request is used to start the validation process of the
+    card. 
+
+    The result of this request determines whether 3DS is supported by the card
+    and what type of authentication is required.
+  operationId: createAuthentication
+  security:
+    - OAuth2:
+        - payment.write
+    - ApiKeyAuth: []
+  tags:
+    - 3D Secure
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\authenticationRequest.yaml
+  responses:
+    '201':
+      description: Card Lookup operation result response
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\authenticationResponse.yaml
+    '202':
+      description: MPI Authentication operation resulted in a challenge.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\authenticationResponse.yaml
+    '400':
+      $ref: ..\components\responses\badRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      $ref: ..\components\responses\notFound.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

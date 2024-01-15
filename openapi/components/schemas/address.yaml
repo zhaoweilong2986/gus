@@ -1,0 +1,25 @@
+type: object
+description: The postal address including street, town/city, province, and postal code.
+properties:
+  unitNumber:
+    $ref: .\unitNumber.yaml
+  streetNumber:
+    $ref: .\streetNumber.yaml
+  streetName:
+    $ref: .\streetName.yaml
+  city:
+    $ref: .\city.yaml
+  province:
+    $ref: .\province.yaml
+  postalCode:
+    $ref: .\postalCode.yaml
+  country:
+    $ref: .\country.yaml
+example:
+  unitNumber: 123A
+  streetNumber: '3300'
+  streetName: Bloor Street West
+  city: Toronto
+  province: Ontario
+  postalCode: M8X 2X2
+  country: CA

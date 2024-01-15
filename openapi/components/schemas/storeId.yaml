@@ -1,0 +1,7 @@
+type: string
+description: >-
+  Account Id provided to merchants by Moneris for processing transactions via
+  API
+minLength: 5
+maxLength: 18
+example: monca00001

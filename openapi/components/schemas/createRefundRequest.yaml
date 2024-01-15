@@ -1,0 +1,39 @@
+title: refundRequest
+type: object
+properties:
+  idempotencyKey:
+    $ref: .\idempotencyKey.yaml
+  paymentId:
+    $ref: .\resourceId.yaml
+  orderId:
+    $ref: .\orderId.yaml
+  invoiceNumber:
+    $ref: .\invoiceNumber.yaml
+  refundAmount:
+    $ref: .\refundAmount.yaml
+  paymentMethodId:
+    $ref: .\resourceId.yaml
+  paymentMethod:
+    $ref: .\paymentMethodRequest.yaml
+  customerId:
+    $ref: .\resourceId.yaml
+  customData:
+    $ref: .\customData.yaml
+  dynamicDescriptor:
+    $ref: .\dynamicDescriptor.yaml
+  cofInformation:
+    $ref: .\cardOnFileInformation.yaml
+  ipv4:
+    $ref: .\ipv4.yaml
+  ipv6:
+    $ref: .\ipv6.yaml
+  ecommerceIndicator:
+    description: Describes the category of e-commerce transaction being processed.
+    $ref: .\ecommerceIndicator.yaml
+  reason:
+    $ref: .\reason.yaml
+required:
+  - idempotencyKey
+  - merchantId
+  - refundAmount
+  - paymentId

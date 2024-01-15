@@ -1,0 +1,8 @@
+type: string
+description: >-
+  If the transStatus is “C” this field will be populated with the URL to POST
+  the challengeData to create the cardholder challenge screen
+format: uri
+minLength: 1
+maxLength: 2048
+example: https://developer.moneris.com/

@@ -1,0 +1,7 @@
+type: string
+description: >-
+  Indicator of the state of the ACS challenge cycle and whether the challenge
+  has completed or will require additional messages.
+enum:
+  - 'YES'
+  - 'NO'

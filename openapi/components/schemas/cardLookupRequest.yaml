@@ -1,0 +1,23 @@
+title: cardLookupRequest
+description: >-
+  The card_lookup request verifies the applicability of 3DS on the card and
+  returns the 3DS version supported by the card. It also returns the 3DS Method
+  URL and 3DS Method Data for submitting a device fingerprinting POST to
+  issuer’s ACS.
+type: object
+properties:
+  idempotencyKey:
+    $ref: .\idempotencyKey.yaml
+  orderId:
+    $ref: .\orderId.yaml
+  paymentMethodId:
+    $ref: .\resourceId.yaml
+  paymentMethod:
+    $ref: .\paymentMethodRequest.yaml
+  threeDSecureNotificationUrl:
+    $ref: .\threeDSecureNotificationUrl.yaml
+required:
+  - idempotencyKey
+  - orderId
+  - threeDSecureNotificationUrl
+  - merchantId

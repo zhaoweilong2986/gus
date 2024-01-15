@@ -1,0 +1,8 @@
+type: string
+description: >-
+  Transaction Response Code < 50, Transaction approved >= 50, Transaction
+  declined NULL Transaction was not sent for authorization. For further details
+  on the response codes that are returned please see the Response Codes table
+minLength: 3
+maxLength: 3
+example: 1

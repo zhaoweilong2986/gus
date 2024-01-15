@@ -1,0 +1,6 @@
+in: path
+name: customer-id
+description: The unique identifier of the customer
+required: true
+schema:
+  $ref: ..\schemas\resourceId.yaml

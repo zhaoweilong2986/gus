@@ -1,0 +1,9 @@
+summary: Concurrent Access Error
+value:
+  type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+  title: CONCURRENCY_ERROR
+  status: 409
+  detail: null
+  instance: null
+  category: API_ERROR
+  errors: []

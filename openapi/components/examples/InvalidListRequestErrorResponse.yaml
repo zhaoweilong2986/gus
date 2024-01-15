@@ -1,0 +1,12 @@
+summary: Invalid query parameter
+value:
+  type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+  title: INVALID_QUERY_PARAMETER
+  status: 400
+  detail: null
+  instance: null
+  category: INVALID_REQUEST_ERROR
+  errors:
+    - parameter: created_from
+      value: 2019/07/30
+      reasonCode: INVALID_FORMAT

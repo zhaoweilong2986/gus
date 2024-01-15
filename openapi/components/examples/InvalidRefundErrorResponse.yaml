@@ -1,0 +1,8 @@
+summary: Invalid Matching Refund
+value:
+  type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+  title: INVALID_PAYMENT
+  status: 400
+  detail: Invalid payment Id or payment Id not found
+  instance: /payments/pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+  category: INVALID_REQUEST_ERROR

@@ -1,0 +1,10 @@
+type: object
+description: Customer's contact details
+properties:
+  phoneNumber:
+    $ref: .\phoneNumber.yaml
+  email:
+    $ref: .\email.yaml
+example:
+  phoneNumber: 1-866-319-7450
+  email: moneris@moneris.com

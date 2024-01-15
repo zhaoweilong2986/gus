@@ -1,0 +1,18 @@
+type: object
+description: Internal Payment Method Request
+properties:
+  readOnly:
+    type: boolean
+    description: Change temp token status to read only
+  convertToPermanentToken:
+    type: boolean
+    description: To convert temp token to permanent token
+  issuerId:
+    type: string
+    description: Issuer ID
+  expiryMonth:
+    $ref: .\expiryMonth.yaml
+  expiryYear:
+    $ref: .\expiryYear.yaml
+  paymentMethodStored:
+    $ref: .\storePaymentMethod.yaml

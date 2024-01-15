@@ -1,0 +1,6 @@
+name: payment-method-id
+in: path
+description: Payment Method ID
+required: true
+schema:
+  $ref: ..\schemas\resourceId.yaml

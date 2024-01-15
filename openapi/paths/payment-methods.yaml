@@ -1,0 +1,198 @@
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\prm-common_apiVersion.yaml
+  - $ref: ..\components\parameters\xMerchantId.yaml
+  - $ref: ..\components\parameters\xStoreId.yaml
+  - $ref: ..\components\parameters\xApiToken.yaml
+get:
+  summary: List payment methods
+  description: Retrieves a paginated list of payment methods.
+  operationId: getPaymentMethods
+  security:
+    - OAuth2:
+        - payment.read
+    - OAuth2:
+        - payment.write
+    - ApiKeyAuth: []
+  tags:
+    - Payment Methods
+  parameters:
+    - $ref: ..\components\parameters\pageBeforeCursor.yaml
+    - $ref: ..\components\parameters\pageLimit.yaml
+    - $ref: ..\components\parameters\createdFrom.yaml
+    - $ref: ..\components\parameters\createdTo.yaml
+    - $ref: ..\components\parameters\isExpiring.yaml
+  responses:
+    '200':
+      description: Paginated list of payment methods
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\paymentMethodResponseList.yaml
+          example:
+            data:
+              - paymentMethodId: pm0105ARZ3NDEKTSV4RRFFQ69G5FAV
+                merchantId: '0123456789101'
+                cardholderInformation: null
+                contactDetails: null
+                billingAddress: null
+                paymentMethodType: CARD
+                paymentMethodInformation:
+                  cardInformation:
+                    bankIdentificationNumber: '123456'
+                    lastFour: '1234'
+                    expiryMonth: 1
+                    expiryYear: 2023
+                    cardBrand: MASTERCARD
+                    cardType: CREDIT
+                    cardFingerprint: 1Q2W3E4r5t6rfwewerwewrrw
+                    issuer: RBC
+                  paymentAccountReference: '11112222333344445555666677778'
+                paymentMethodStored: DO_NOT_STORE
+                createdAt: '2019-07-30T06:43:40.252Z'
+                modifiedAt: '2019-07-30T06:43:40.252Z'
+                customData:
+                  property1: string
+                  property2: string
+              - paymentMethodId: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+                merchantId: '0123456789101'
+                cardholderInformation:
+                  cardholderName: John Doe
+                  companyName: SP Ltd
+                contactDetails:
+                  phoneNumber: 1-866-319-7450
+                  email: moneris@moneris.com
+                billingAddress:
+                  unitNumber: 123A
+                  streetNumber: '3300'
+                  streetName: Bloor Street West
+                  city: Toronto
+                  province: Ontario
+                  postalCode: M8X 2X2
+                  country: CA
+                paymentMethodType: TEMPORARY_TOKEN
+                paymentMethodInformation:
+                  cardInformation:
+                    bankIdentificationNumber: '123456'
+                    lastFour: '1234'
+                    expiryMonth: 1
+                    expiryYear: 2023
+                    cardBrand: MASTERCARD
+                    cardType: CREDIT
+                    cardFingerprint: 1Q2W3E4r5t6rfwewerwewrrw
+                    issuer: RBC
+                  paymentAccountReference: '11112222333344445555666677778'
+                paymentMethodStored: DO_NOT_STORE
+                createdAt: '2019-07-30T06:43:40.252Z'
+                modifiedAt: '2019-07-30T06:43:40.252Z'
+                customData:
+                  property1: string
+                  property2: string
+            self: >-
+              /payment-methods?cursor=d41d8cd98f00b&limit=50&api_version=2023-11-01
+            first: >-
+              /payment-methods?cursor=d41d8cd98f00b&limit=50&api_version=2023-11-01
+            last: >-
+              /payment-methods?cursor=d41d8cd98f00b&limit=50&api_version=2023-11-01
+            next": null
+            previous: null
+    '400':
+      $ref: ..\components\responses\invalidListbadRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml
+post:
+  summary: Create Payment Method
+  description: Create a Payment Method.
+  operationId: createPaymentMethod
+  security:
+    - OAuth2:
+        - payment.write
+    - ApiKeyAuth: []
+  tags:
+    - Payment Methods
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\createPaymentMethodRequest.yaml
+        examples:
+          card:
+            $ref: ..\components\examples\cardPaymentMethodRequest.yaml
+          temporary_token:
+            $ref: ..\components\examples\temporaryTokenPaymentMethodRequest.yaml
+          permanent_token:
+            $ref: ..\components\examples\permanentTokenPaymentMethodRequest.yaml
+  responses:
+    '201':
+      description: >
+        Payment method created successfully.  Response content contains the
+        created payment method.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\paymentMethodResponse.yaml
+          example:
+            paymentMethodId: pm0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            merchantId: '0123456789101'
+            cardholderInformation:
+              cardholderName: John Doe
+              companyName: SP Ltd
+            contactDetails:
+              phoneNumber: 1-866-319-7450
+              email: moneris@moneris.com
+            billingAddress:
+              unitNumber: 123A
+              streetNumber: '3300'
+              streetName: Bloor Street West
+              city: Toronto
+              province: Ontario
+              postalCode: M8X 2X2
+              country: CA
+            paymentMethodType: CARD
+            paymentMethodInformation:
+              cardInformation:
+                bankIdentificationNumber: '123456'
+                lastFour: '1234'
+                expiryMonth: 1
+                expiryYear: 2023
+                cardBrand: MASTERCARD
+                cardType: CREDIT
+                cardFingerprint: 1Q2W3E4r5t6rfwewerwewrrw
+                issuer: RBC
+              paymentAccountReference: '11112222333344445555666677778'
+            paymentMethodStored: DO_NOT_STORE
+            createdAt: '2019-07-30T06:43:40.252Z'
+            modifiedAt: '2019-07-30T06:43:40.252Z'
+            customData:
+              property1: string
+              property2: string
+    '400':
+      $ref: ..\components\responses\badRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '409':
+      $ref: ..\components\responses\conflict.yaml
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

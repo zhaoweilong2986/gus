@@ -1,0 +1,40 @@
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\prm-common_apiVersion.yaml
+  - $ref: ..\components\parameters\xMerchantId.yaml
+  - $ref: ..\components\parameters\xStoreId.yaml
+  - $ref: ..\components\parameters\xApiToken.yaml
+  - $ref: ..\components\parameters\authenticationId.yaml
+get:
+  summary: Retrieve Authentication
+  description: Retrieve an authentication by its authentication Id
+  operationId: getAuthentication
+  security:
+    - OAuth2:
+        - payment.read
+    - OAuth2:
+        - payment.write
+    - ApiKeyAuth: []
+  tags:
+    - 3D Secure
+  responses:
+    '200':
+      description: The authentication corresponding to the provided `authentication-id`
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\authenticationResponse.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      $ref: ..\components\responses\notFound.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

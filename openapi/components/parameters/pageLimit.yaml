@@ -1,0 +1,8 @@
+in: query
+name: limit
+description: Pagination page size limit.
+schema:
+  type: integer
+  minimum: 1
+  maximum: 100
+  example: 50

@@ -1,0 +1,29 @@
+title: refundResponse
+type: object
+properties:
+  refundId:
+    $ref: .\resourceId.yaml
+  paymentId:
+    $ref: .\resourceId.yaml
+  merchantId:
+    $ref: .\merchantId.yaml
+  paymentMethod:
+    $ref: .\paymentMethodResponse.yaml
+  createdAt:
+    $ref: .\createdAt.yaml
+  modifiedAt:
+    $ref: .\modifiedAt.yaml
+  refundAmount:
+    $ref: .\refundAmount.yaml
+  customerId:
+    $ref: .\resourceId.yaml
+  status:
+    $ref: .\refundStatus.yaml
+  statusDetails:
+    $ref: .\statusDetails.yaml
+  reason:
+    $ref: .\reason.yaml
+  cardOnFileResponse:
+    $ref: .\cardOnFileResponse.yaml
+  customData:
+    $ref: .\customData.yaml

@@ -1,0 +1,9 @@
+description: CVD, AVS, 3DS, ITD Result Codes
+type: object
+properties:
+  addressVerificationServiceResultCode:
+    $ref: .\addressVerificationServiceResult.yaml
+  cardSecurityCodeResultCode:
+    $ref: .\cardSecurityCodeResult.yaml
+  threeDSecureAuthenticationValueResultCode:
+    $ref: .\threeDSecureAuthenticationValueResult.yaml

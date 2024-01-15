@@ -1,0 +1,10 @@
+description: Refund details if any has occured.
+type: object
+properties:
+  refundIds:
+    description: List of Refunds associated with this Payment
+    type: array
+    items:
+      $ref: .\resourceId.yaml
+  refundedAmount:
+    $ref: .\refundAmount.yaml

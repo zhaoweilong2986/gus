@@ -1,0 +1,8 @@
+type: string
+description: >-
+  This field is created when a temporary token is created and returned. It is a
+  unique profile identifier, and is a required value for temporary token
+  transactions.
+minLength: 25
+maxLength: 28
+example: ot-HCUeCFtXJfEZSSUqvUJk0

@@ -1,0 +1,6 @@
+description: The relative time in seconds when the rate limit window will be reset.
+required: false
+schema:
+  type: integer
+  format: int32
+example: null

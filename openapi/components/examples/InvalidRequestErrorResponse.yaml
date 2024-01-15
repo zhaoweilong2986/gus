@@ -1,0 +1,11 @@
+value:
+  type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+  title: INVALID_ADDRESS
+  status: 400
+  detail: null
+  instance: null
+  category: INVALID_REQUEST_ERROR
+  errors:
+    - reasonCode: INVALID_FORMAT
+      parameterName: address.postalCode
+      parameterValue: MAP3J8

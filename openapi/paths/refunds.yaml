@@ -1,0 +1,289 @@
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\prm-common_apiVersion.yaml
+  - $ref: ..\components\parameters\xMerchantId.yaml
+  - $ref: ..\components\parameters\xStoreId.yaml
+  - $ref: ..\components\parameters\xApiToken.yaml
+get:
+  summary: List Refunds
+  description: Returns a paginated list of refund operations.
+  operationId: getRefunds
+  security:
+    - OAuth2:
+        - refund.read
+    - OAuth2:
+        - refund.write
+    - ApiKeyAuth: []
+  tags:
+    - Refunds
+  parameters:
+    - $ref: ..\components\parameters\pageBeforeCursor.yaml
+    - $ref: ..\components\parameters\pageLimit.yaml
+    - $ref: ..\components\parameters\createdFrom.yaml
+    - $ref: ..\components\parameters\createdTo.yaml
+  responses:
+    '200':
+      description: Refund list successfully returned.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\refundResponseList.yaml
+          example:
+            data:
+              - refundId: ri0105ARZ3NDEKTSV4RRFFQ69G5FAV
+                paymentId: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+                merchantId: '0123456789101'
+                paymentMethod:
+                  paymentMethodId: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+                  merchantId: '0123456789101'
+                  cardholderInformation:
+                    cardholderName: John Doe
+                    companyName: SP Ltd
+                  contactDetails:
+                    phoneNumber: 1-866-319-7450
+                    email: moneris@moneris.com
+                  billingAddress:
+                    unitNumber: 123A
+                    streetNumber: '3300'
+                    streetName: Bloor Street West
+                    city: Toronto
+                    province: Ontario
+                    postalCode: M8X 2X2
+                    country: CA
+                  paymentMethodType: CARD
+                  paymentMethodInformation:
+                    cardInformation:
+                      bankIdentificationNumber: '123456'
+                      lastFour: '1234'
+                      expiryMonth: 1
+                      expiryYear: 2023
+                      cardBrand: MASTERCARD
+                      cardType: CREDIT
+                      cardFingerprint: 1Q2W3E4r5t6rfwewerwewrrw
+                      issuer: RBC
+                    paymentAccountReference: '11112222333344445555666677778'
+                  paymentMethodStored: DO_NOT_STORE
+                  createdAt: '2019-07-30T06:43:40.252Z'
+                  modifiedAt: '2019-07-30T06:43:40.252Z'
+                  customData:
+                    property1: string
+                    property2: string
+                createdAt: '2019-07-30T06:43:40.252Z'
+                modifiedAt: '2019-07-30T06:43:40.252Z'
+                refundAmount:
+                  amount: 1600
+                  currency: CAD
+                customerId: ci0105ARZ3NDEKTSV4RRFFQ69G5FAV
+                status: SUCCEEDED
+                statusDetails:
+                  transactionUniqueId: 938c2cc0dcc05f2b68c4287040cfcf71
+                  isoResponseCode: 1
+                  responseCode: 1
+                  message: SUCCESS
+                  ecommerceIndicator: AUTHENTICATED_ECOMMERCE
+                reason: Defective product
+                cardOnFileResponse: null
+                customData:
+                  property1: string
+                  property2: string
+              - refundId: ri0105ARZ3NDEKTSV4RRFFQ69G5FAV
+                paymentId: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+                merchantId: '0123456789101'
+                paymentMethod:
+                  paymentMethodId: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+                  merchantId: '0123456789101'
+                  cardholderInformation:
+                    cardholderName: John Doe
+                    companyName: SP Ltd
+                  contactDetails:
+                    phoneNumber: 1-866-319-7450
+                    email: moneris@moneris.com
+                  billingAddress:
+                    unitNumber: 123A
+                    streetNumber: '3300'
+                    streetName: Bloor Street West
+                    city: Toronto
+                    province: Ontario
+                    postalCode: M8X 2X2
+                    country: CA
+                  paymentMethodType: CARD
+                  paymentMethodInformation:
+                    cardInformation:
+                      bankIdentificationNumber: '123456'
+                      lastFour: '1234'
+                      expiryMonth: 1
+                      expiryYear: 2023
+                      cardBrand: MASTERCARD
+                      cardType: CREDIT
+                      cardFingerprint: 1Q2W3E4r5t6rfwewerwewrrw
+                      issuer: RBC
+                    paymentAccountReference: '11112222333344445555666677778'
+                  paymentMethodStored: DO_NOT_STORE
+                  createdAt: '2019-07-30T06:43:40.252Z'
+                  modifiedAt: '2019-07-30T06:43:40.252Z'
+                  customData:
+                    property1: string
+                    property2: string
+                createdAt: '2019-07-30T06:43:40.252Z'
+                modifiedAt: '2019-07-30T06:43:40.252Z'
+                refundAmount:
+                  amount: 1600
+                  currency: CAD
+                customerId: ci0105ARZ3NDEKTSV4RRFFQ69G5FAV
+                status: DECLINED
+                statusDetails:
+                  transactionUniqueId: 938c2cc0dcc05f2b68c4287040cfcf71
+                  isoResponseCode: 51
+                  responseCode: 54
+                  message: Expired Card
+                  ecommerceIndicator: AUTHENTICATED_ECOMMERCE
+                reason: Defective product
+                cardOnFileResponse: null
+                customData:
+                  property1: string
+                  property2: string
+            self: /refunds?cursor=d41d8cd98f00b&limit=50&api_version=2023-11-01
+            first: /refunds?cursor=d41d8cd98f00b&limit=50&api_version=2023-11-01
+            last: /refunds?cursor=d41d8cd98f00b&limit=50&api_version=2023-11-01
+            next": null
+            previous: null
+    '400':
+      $ref: ..\components\responses\invalidListbadRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml
+post:
+  summary: Create Refund
+  description: >
+    This operation is used to create a Refund. 
+
+    For payment refunds, Payment Id is required while payment method is not
+    required.
+
+    For independent refunds, no payment Id is required, however payment method
+    is required.
+  operationId: createRefund
+  security:
+    - OAuth2:
+        - refund.write
+    - ApiKeyAuth: []
+  tags:
+    - Refunds
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\createRefundRequest.yaml
+        examples:
+          matching:
+            $ref: ..\components\examples\matchingRefundRequest.yaml
+  responses:
+    '201':
+      description: Refund operation result response
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\refundResponse.yaml
+          example:
+            refundId: ri0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            paymentId: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            merchantId: '0123456789101'
+            paymentMethod:
+              paymentMethodId: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+              merchantId: '0123456789101'
+              cardholderInformation:
+                cardholderName: John Doe
+                companyName: SP Ltd
+              contactDetails:
+                phoneNumber: 1-866-319-7450
+                email: moneris@moneris.com
+              billingAddress:
+                unitNumber: 123A
+                streetNumber: '3300'
+                streetName: Bloor Street West
+                city: Toronto
+                province: Ontario
+                postalCode: M8X 2X2
+                country: CA
+              paymentMethodType: CARD
+              paymentMethodInformation:
+                cardInformation:
+                  bankIdentificationNumber: '123456'
+                  lastFour: '1234'
+                  expiryMonth: 1
+                  expiryYear: 2023
+                  cardBrand: MASTERCARD
+                  cardType: CREDIT
+                  cardFingerprint: 1Q2W3E4r5t6rfwewerwewrrw
+                  issuer: RBC
+                paymentAccountReference: '11112222333344445555666677778'
+              paymentMethodStored: DO_NOT_STORE
+              createdAt: '2019-07-30T06:43:40.252Z'
+              modifiedAt: '2019-07-30T06:43:40.252Z'
+              customData:
+                property1: string
+                property2: string
+            createdAt: '2019-07-30T06:43:40.252Z'
+            modifiedAt: '2019-07-30T06:43:40.252Z'
+            refundAmount:
+              amount: 1600
+              currency: CAD
+            customerId: ci0105ARZ3NDEKTSV4RRFFQ69G5FAV
+            status: SUCCEEDED
+            statusDetails:
+              transactionUniqueId: 938c2cc0dcc05f2b68c4287040cfcf71
+              isoResponseCode: 1
+              responseCode: 1
+              message: SUCCESS
+              ecommerceIndicator: AUTHENTICATED_ECOMMERCE
+            reason: Defective product
+            cardOnFileResponse: null
+            customData:
+              property1: string
+              property2: string
+    '400':
+      description: Refund operation declined
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\error.yaml
+          examples:
+            invalid_request:
+              $ref: ..\components\examples\InvalidRefundErrorResponse.yaml
+            declined:
+              $ref: >-
+                ..\components\examples\exp-refundResponse_DeclineErrorResponse.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      $ref: ..\components\responses\notFound.yaml
+    '409':
+      $ref: ..\components\responses\conflict.yaml
+    '429':
+      $ref: ..\components\responses\tooManyRequests.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

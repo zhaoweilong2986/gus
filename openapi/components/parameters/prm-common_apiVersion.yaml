@@ -1,0 +1,6 @@
+in: query
+name: api_version
+description: Version group id
+required: false
+schema:
+  $ref: ..\schemas\apiVersion.yaml

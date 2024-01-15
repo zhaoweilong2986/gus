@@ -1,0 +1,8 @@
+type: string
+description: Refund Status description.
+enum:
+  - DECLINED
+  - DECLINED_RETRY
+  - PROCESSING
+  - SUCCEEDED
+example: SUCCEEDED

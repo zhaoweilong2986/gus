@@ -1,0 +1,7 @@
+in: query
+name: cursor
+description: Pagination cursor to return rows located after it.
+required: false
+schema:
+  type: string
+  example: d41d8cd98f00b204e9800998ecf8427e

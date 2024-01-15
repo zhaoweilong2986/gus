@@ -1,0 +1,10 @@
+title: paymentMethodInformation
+description: Details about the card used in the payment method.
+type: object
+properties:
+  cardInformation:
+    $ref: .\cardInformation.yaml
+  paymentAccountReference:
+    $ref: .\paymentAccountReference.yaml
+required:
+  - cardInformation

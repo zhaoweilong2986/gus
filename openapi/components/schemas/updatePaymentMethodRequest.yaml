@@ -1,0 +1,15 @@
+title: paymentMethodRequest
+type: object
+properties:
+  cardholderInformation:
+    $ref: .\cardholderInformation.yaml
+  contactDetails:
+    $ref: .\contactDetails.yaml
+  billingAddress:
+    $ref: .\address.yaml
+  paymentMethodData:
+    $ref: .\paymentMethodData.yaml
+  customData:
+    $ref: .\customData.yaml
+required:
+  - paymentMethodData

@@ -1,0 +1,42 @@
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\prm-common_apiVersion.yaml
+  - $ref: ..\components\parameters\xMerchantId.yaml
+  - $ref: ..\components\parameters\xStoreId.yaml
+  - $ref: ..\components\parameters\xApiToken.yaml
+post:
+  summary: 3DS Card Lookup
+  description: 3DS Card Lookup
+  operationId: cardLookup
+  security:
+    - OAuth2:
+        - payment.write
+    - ApiKeyAuth: []
+  tags:
+    - 3D Secure
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\cardLookupRequest.yaml
+  responses:
+    '200':
+      description: CAVV Lookup operation to read the challenge result.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\cardLookupResponse.yaml
+    '400':
+      $ref: ..\components\responses\badRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

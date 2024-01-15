@@ -1,0 +1,17 @@
+title: customerResponseList
+properties:
+  data:
+    type: array
+    items:
+      type: object
+      $ref: .\customerResponse.yaml
+  self:
+    $ref: .\self.yaml
+  first:
+    $ref: .\first.yaml
+  last:
+    $ref: .\last.yaml
+  next:
+    $ref: .\next.yaml
+  previous:
+    $ref: .\previous.yaml

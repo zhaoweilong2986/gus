@@ -1,0 +1,10 @@
+type: string
+description: Payment Status description.
+enum:
+  - CANCELED
+  - DECLINED
+  - DECLINED_RETRY
+  - AUTHORIZED
+  - PROCESSING
+  - SUCCEEDED
+example: SUCCEEDED

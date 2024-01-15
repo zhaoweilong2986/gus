@@ -1,0 +1,4 @@
+type: string
+format: ipv4
+description: Internet Protocol version 4 (IPv4).
+example: 104.75.173.179

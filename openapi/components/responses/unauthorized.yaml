@@ -1,0 +1,22 @@
+description: Not authorized. The user does not have a valid API Key or Access Token.
+headers:
+  Api-Version:
+    $ref: ..\headers\apiVersion.yaml
+  X-Correlation-Id:
+    $ref: ..\headers\correlationId.yaml
+  WWW-Authenticate:
+    schema:
+      type: string
+      example: Bearer, error="invalid_token"
+content:
+  application/problem+json:
+    schema:
+      $ref: ..\schemas\error.yaml
+    example:
+      type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+      title: UNAUTHORIZED_REQUEST
+      status: 401
+      detail: null
+      instance: null
+      category: UNAUTHORIZED_ERROR
+      errors: []

@@ -1,0 +1,7 @@
+type: string
+description: >-
+  A Unique Identifier that is used handle idempotent requests. Moneris
+  encourages the use of UUID Version 4 in APIs as an idempotency key.
+minLength: 1
+maxLength: 36
+example: 6q5w4e7r8t9y

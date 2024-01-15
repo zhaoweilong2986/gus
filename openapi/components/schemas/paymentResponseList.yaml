@@ -1,0 +1,19 @@
+title: paymentResponseList
+type: object
+properties:
+  data:
+    description: Payments list.
+    type: array
+    items:
+      type: object
+      $ref: .\paymentResponse.yaml
+  self:
+    $ref: .\self.yaml
+  first:
+    $ref: .\first.yaml
+  last:
+    $ref: .\last.yaml
+  next:
+    $ref: .\next.yaml
+  previous:
+    $ref: .\previous.yaml

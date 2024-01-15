@@ -1,0 +1,6 @@
+type: string
+description: >-
+  This data element provides additional information to the ACS to determine the
+  best approach for handing a request.
+maxLength: 36
+example: '12345678'

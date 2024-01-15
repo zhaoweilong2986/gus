@@ -1,0 +1,12 @@
+title: cancelPaymentRequest
+type: object
+properties:
+  idempotencyKey:
+    $ref: .\idempotencyKey.yaml
+  customData:
+    $ref: .\customData.yaml
+  reason:
+    $ref: .\reason.yaml
+required:
+  - idempotencyKey
+  - merchantId

@@ -1,0 +1,6 @@
+type: string
+format: uri
+description: >-
+  Fully qualified URL of the system that receives the Response message or Error
+  Message.
+example: https://developer.moneris.com/

@@ -1,0 +1,7 @@
+type: string
+description: >-
+  Two letter country code based on the ISO 3166-1 alpha-2 standard. See
+  https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+minLength: 2
+maxLength: 2
+example: CA

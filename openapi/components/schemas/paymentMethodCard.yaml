@@ -1,0 +1,16 @@
+type: object
+description: Credit/Debit/Gift Card payment method details.
+properties:
+  cardNumber:
+    $ref: .\cardNumber.yaml
+  expiryMonth:
+    $ref: .\expiryMonth.yaml
+  expiryYear:
+    $ref: .\expiryYear.yaml
+  cardSecurityCode:
+    $ref: .\cardSecurityCode.yaml
+required:
+  - cardNumber
+  - expiryMonth
+  - expiryYear
+  - cardSecurityCode

@@ -1,0 +1,15 @@
+description: >-
+  Request could not be completed due to a conflict with resource state or
+  existing idempotency key.
+headers:
+  Api-Version:
+    $ref: ..\headers\apiVersion.yaml
+  X-Correlation-Id:
+    $ref: ..\headers\correlationId.yaml
+content:
+  application/problem+json:
+    schema:
+      $ref: ..\schemas\error.yaml
+    examples:
+      idempotency_error:
+        $ref: ..\examples\IdempotencyRequestErrorResponse.yaml

@@ -1,0 +1,5 @@
+type: string
+description: Customer last name
+minLength: 1
+maxLength: 30
+example: Doe

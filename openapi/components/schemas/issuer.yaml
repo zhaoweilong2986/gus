@@ -1,0 +1,5 @@
+type: string
+description: Card Issuer.
+minLength: 1
+maxLength: 100
+example: RBC

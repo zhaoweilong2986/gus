@@ -1,0 +1,5 @@
+type: string
+description: Customer's phone number
+minLength: 1
+maxLength: 30
+example: 1-866-319-7450

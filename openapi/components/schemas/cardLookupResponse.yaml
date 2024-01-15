@@ -1,0 +1,21 @@
+title: cardLookupResponse
+type: object
+properties:
+  cardLookupId:
+    $ref: .\resourceId.yaml
+  merchantId:
+    $ref: .\merchantId.yaml
+  orderId:
+    $ref: .\orderId.yaml
+  threeDSecureServerTransactionId:
+    $ref: .\threeDSecureServerTransactionId.yaml
+  threeDSecureDirectoryServerTransactionId:
+    $ref: .\threeDSecureDirectoryServerTransactionId.yaml
+  paymentMethod:
+    $ref: .\paymentMethodResponse.yaml
+  threeDSecureVersion:
+    $ref: .\threeDSecureVersion.yaml
+  threeDSecureMethodUrl:
+    $ref: .\threeDSecureMethodUrl.yaml
+  threeDSecureMethodData:
+    $ref: .\threeDSecureMethodData.yaml

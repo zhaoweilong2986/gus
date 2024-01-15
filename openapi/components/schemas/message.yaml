@@ -1,0 +1,8 @@
+type: string
+description: >-
+  Response description returned from issuing institution. This message should
+  not be displayed on any cardholder facing materials.  For receipt purposes,
+  please refer to the Receipt Requirements
+minLength: 1
+maxLength: 100
+example: SUCCESS

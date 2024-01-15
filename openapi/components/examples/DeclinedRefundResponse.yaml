@@ -1,0 +1,58 @@
+summary: Refund succeeded
+value:
+  refundId: ri0105ARZ3NDEKTSV4RRFFQ69G5FAV
+  paymentId: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+  merchantId: '0123456789101'
+  paymentMethod:
+    paymentMethodId: pi0105ARZ3NDEKTSV4RRFFQ69G5FAV
+    merchantId: '0123456789101'
+    cardholderInformation:
+      cardholderName: John Doe
+      companyName: SP Ltd
+    contactDetails:
+      phoneNumber: 1-866-319-7450
+      email: moneris@moneris.com
+    billingAddress:
+      unitNumber: 123A
+      streetNumber: '3300'
+      streetName: Bloor Street West
+      city: Toronto
+      province: Ontario
+      postalCode: M8X 2X2
+      country: CA
+    paymentMethodType: CARD
+    paymentMethodInformation:
+      cardInformation:
+        bankIdentificationNumber: '123456'
+        lastFour: '1234'
+        expiryMonth: 1
+        expiryYear: 2023
+        cardBrand: MASTERCARD
+        cardType: CREDIT
+        cardFingerprint: 1Q2W3E4r5t6rfwewerwewrrw
+        issuer: RBC
+      paymentAccountReference: '11112222333344445555666677778'
+    paymentMethodStored: DO_NOT_STORE
+    createdAt: '2019-07-30T06:43:40.252Z'
+    modifiedAt: '2019-07-30T06:43:40.252Z'
+    customData:
+      property1: string
+      property2: string
+  createdAt: '2019-07-30T06:43:40.252Z'
+  modifiedAt: '2019-07-30T06:43:40.252Z'
+  refundAmount:
+    amount: 1600
+    currency: CAD
+  customerId: ci0105ARZ3NDEKTSV4RRFFQ69G5FAV
+  status: DECLINED
+  statusDetails:
+    transactionUniqueId: 938c2cc0dcc05f2b68c4287040cfcf71
+    isoResponseCode: 51
+    responseCode: 54
+    message: Expired Card
+    ecommerceIndicator: AUTHENTICATED_ECOMMERCE
+  reason: Defective product
+  cardOnFileResponse: null
+  customData:
+    property1: string
+    property2: string

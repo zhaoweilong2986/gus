@@ -1,0 +1,8 @@
+summary: Temporary Token Payment Method request
+value:
+  cardholderInformation: null
+  contactDetails: null
+  billingAddress: null
+  paymentMethodData:
+    paymentMethodType: TEMPORARY_TOKEN
+    temporaryToken: ot-HCUeCFtXJfEZSSUqvXYl9

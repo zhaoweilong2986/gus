@@ -1,0 +1,4 @@
+type: string
+description: Unique identifier for the card
+maxLength: 255
+example: 1Q2W3E4r5t6rfwewerwewrrw

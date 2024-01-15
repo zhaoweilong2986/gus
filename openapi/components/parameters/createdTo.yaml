@@ -1,0 +1,8 @@
+name: created_to
+in: query
+description: >-
+  Return items created before the specified date. Defaults to now. Must be later
+  than created_from.
+required: false
+schema:
+  $ref: ..\schemas\dateTime.yaml

@@ -1,0 +1,8 @@
+value:
+  type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+  title: EXCESS PIN TRIES
+  status: 400
+  detail: 052-38 - PIN retries exceeded
+  instance: /payments/20c3ee41-2560-4645-b84f-631fb08819de
+  category: DECLINED_ERROR
+  errors: []

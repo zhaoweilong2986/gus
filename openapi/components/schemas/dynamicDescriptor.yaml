@@ -1,0 +1,11 @@
+type: string
+description: >-
+  Merchant defined description sent on a per-transaction basis that will appear
+  on the credit card statement.  Dependent on the card Issuer, the statement
+  will typically show the dynamic descriptor appended to the merchant's existing
+  business name separated by the '/' character.  Please note that the combined
+  length of the merchant's business name, forward slash '/' character, and the
+  dynamic descriptor may not exceed 22 characters.
+minLength: 1
+maxLength: 20
+example: moneris

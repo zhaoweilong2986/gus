@@ -1,0 +1,4 @@
+type: string
+format: ipv6
+description: Internet Protocol version 6 (IPv6).
+example: 2600:1401:2::8a

@@ -1,0 +1,22 @@
+description: Forbidden. The user does not have permission to access the requested resource.
+headers:
+  Api-Version:
+    $ref: ..\headers\apiVersion.yaml
+  X-Correlation-Id:
+    $ref: ..\headers\correlationId.yaml
+  WWW-Authenticate:
+    schema:
+      type: string
+      example: Bearer, error="insufficient_scope"
+content:
+  application/problem+json:
+    schema:
+      $ref: ..\schemas\error.yaml
+    example:
+      type: https://developer.moneris.com/en/More/Testing/Response%20Codes
+      title: FORBIDDEN_REQUEST
+      status: 403
+      detail: null
+      instance: null
+      category: UNAUTHORIZED_ERROR
+      errors: []

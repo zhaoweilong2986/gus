@@ -1,0 +1,4 @@
+type: string
+description: Data that must be posted to 3DS Method URL for the Device Fingerprinting step.
+minLength: 1
+maxLength: 254

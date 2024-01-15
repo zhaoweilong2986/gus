@@ -1,0 +1,3 @@
+description: Api version group
+type: string
+example: '2023-11-01'

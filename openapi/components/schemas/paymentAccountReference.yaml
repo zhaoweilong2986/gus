@@ -1,0 +1,8 @@
+type: string
+description: >-
+  Payment Account Reference (PAR) is used to link Primary Account Number (PAN)
+  based transactions and transactions on associated payment tokens without using
+  the PAN as the linking mechanism.
+minLength: 1
+maxLength: 29
+example: '11112222333344445555666677778'

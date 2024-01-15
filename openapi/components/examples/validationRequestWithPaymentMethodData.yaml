@@ -1,0 +1,32 @@
+summary: With Payment Method Details
+value:
+  idempotencyKey: 5d8f812e-9969-4885-85bb-d03948eccac1
+  customerId: ci0105ARZ3NDEKTSV4RRFFQ69G5FAV
+  paymentMethod:
+    cardholderInformation:
+      cardholderName: John Doe
+      companyName: Gallenkamp
+    billingAddress:
+      unitNumber: 123A
+      streetNumber: '3300'
+      streetName: Bloor Street West
+      city: Toronto
+      province: Ontario
+      postalCode: M8X 2X2
+      country: CA
+    paymentMethodData:
+      paymentMethodType: CARD
+      card:
+        cardNumber: '4444111122223333'
+        expiryMonth: 1
+        expiryYear: 2025
+        cardSecurityCode: 123
+  storePaymentMethod: DO_NOT_STORE
+  ecommerceIndicator: AUTHENTICATED_ECOMMERCE
+  automaticCapture: true
+  customData:
+    property1: string
+    property2: string
+  dynamicDescriptor: moneris
+  ipv4: 192.0.2.146
+  ipv6: 2345:0425:2CA1:0000:0000:0567:5673:23b5

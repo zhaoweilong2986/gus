@@ -1,0 +1,6 @@
+type: string
+description: Identifies the category of the message for a specific use case.
+enum:
+  - PAYMENT
+  - NON_PAYMENT
+example: PAYMENT

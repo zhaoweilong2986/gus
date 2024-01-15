@@ -1,0 +1,5 @@
+type: string
+description: Company name
+minLength: 1
+maxLength: 50
+example: SP Ltd

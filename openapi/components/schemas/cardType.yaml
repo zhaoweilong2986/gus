@@ -1,0 +1,16 @@
+type: string
+description: >-
+  The terminal uses the card type field to specify the intended use for a card
+  (debit or credit)
+enum:
+  - CREDIT
+  - DEBIT
+  - DOMESTIC_DEBIT
+  - PREPAID_RELOADABLE
+  - PREPAID_NON_RELOADABLE
+  - UNKNOWN
+  - GIFT
+  - LOYALTY
+  - FLEET
+  - CORPORATE
+example: CREDIT

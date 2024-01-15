@@ -1,0 +1,45 @@
+title: paymentResponse
+type: object
+properties:
+  paymentId:
+    $ref: .\resourceId.yaml
+  merchantId:
+    $ref: .\merchantId.yaml
+  orderId:
+    $ref: .\orderId.yaml
+  invoiceNumber:
+    $ref: .\invoiceNumber.yaml
+  transactionDateTime:
+    $ref: .\transactionDateTime.yaml
+  createdAt:
+    $ref: .\createdAt.yaml
+  modifiedAt:
+    $ref: .\modifiedAt.yaml
+  amount:
+    description: This amount excludes surcharge, application and convenience fee.
+    $ref: .\transactionAmount.yaml
+  authorizedAmount:
+    description: >-
+      This amount includes transactionAmount and all applicable fees (surcharge,
+      application and convenience).
+    $ref: .\transactionAmount.yaml
+  capturableAmount:
+    $ref: .\transactionAmount.yaml
+  amountDetails:
+    $ref: .\amountDetails.yaml
+  customerId:
+    $ref: .\resourceId.yaml
+  paymentMethod:
+    $ref: .\paymentMethodResponse.yaml
+  paymentStatus:
+    $ref: .\paymentStatus.yaml
+  transactionDetails:
+    $ref: .\statusDetails.yaml
+  checkResults:
+    $ref: .\checkResults.yaml
+  cardOnFileResponse:
+    $ref: .\cardOnFileResponse.yaml
+  refunds:
+    $ref: .\refundDetails.yaml
+  customData:
+    $ref: .\customData.yaml

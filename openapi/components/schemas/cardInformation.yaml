@@ -1,0 +1,19 @@
+type: object
+description: Information about the card being used for the transaction
+properties:
+  bankIdentificationNumber:
+    $ref: .\bankIdentificationNumber.yaml
+  lastFour:
+    $ref: .\lastFour.yaml
+  expiryMonth:
+    $ref: .\expiryMonth.yaml
+  expiryYear:
+    $ref: .\expiryYear.yaml
+  cardBrand:
+    $ref: .\cardBrand.yaml
+  cardType:
+    $ref: .\cardType.yaml
+  cardFingerprint:
+    $ref: .\cardFingerprint.yaml
+  issuer:
+    $ref: .\issuer.yaml

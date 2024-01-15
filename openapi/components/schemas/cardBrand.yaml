@@ -1,0 +1,14 @@
+type: string
+description: Card brand name associated with the cardType.
+enum:
+  - MASTERCARD
+  - VISA
+  - AMERICAN_EXPRESS
+  - JCB
+  - DINERS_DISCOVER
+  - INTERAC
+  - UNIONPAY
+  - GIFT_MONERIS
+  - GIFT_DATACANDY
+  - GIFT_GIVEX
+example: MASTERCARD

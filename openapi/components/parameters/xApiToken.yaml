@@ -1,0 +1,6 @@
+in: header
+name: x-api-token
+description: Moneris Api Token
+required: true
+schema:
+  $ref: ..\schemas\apiToken.yaml

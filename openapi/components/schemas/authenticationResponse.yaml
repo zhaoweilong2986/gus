@@ -1,0 +1,50 @@
+title: authenticationResponse
+type: object
+properties:
+  threeDSecureAuthenticationId:
+    $ref: .\resourceId.yaml
+  cardLookupId:
+    $ref: .\resourceId.yaml
+  merchantId:
+    $ref: .\merchantId.yaml
+  orderId:
+    $ref: .\orderId.yaml
+  threeDSecureMessageType:
+    $ref: .\threeDSecureMessageType.yaml
+  threeDSecureTansactionStatus:
+    $ref: .\threeDSecureTransactionStatus.yaml
+  threeDSecureTansactionStatusReason:
+    $ref: .\threeDSecureTransactionStatusReason.yaml
+  ecommerceIndicator:
+    $ref: .\ecommerceIndicator.yaml
+  threeDSecureChallengeUrl:
+    $ref: .\threeDSecureChallengeUrl.yaml
+  threeDSecureChallengeData:
+    $ref: .\threeDSecureChallengeData.yaml
+  threeDSecureAuthenticationValue:
+    $ref: .\threeDSecureAuthenticationValue.yaml
+  threeDSecureChallengeCompletionIndicator:
+    $ref: .\threeDSecureChallengeCompletionIndicator.yaml
+  threeDSecureServerTransactionId:
+    $ref: .\threeDSecureServerTransactionId.yaml
+  threeDSecureDirectoryServerTransactionId:
+    $ref: .\threeDSecureDirectoryServerTransactionId.yaml
+  threeDSecureAccessControlServerTransactionId:
+    $ref: .\threeDSecureAccessControlServerTransactionId.yaml
+  paymentMethod:
+    $ref: .\paymentMethodResponse.yaml
+  threeDSecureCardholderInformation:
+    type: string
+    description: >-
+      Text provided by the ACS/Issuer to Cardholder during a Frictionless or
+      Decoupled transaction. The Issuer can provide information to Cardholder.
+    maxLength: 128
+    example: >-
+      Additional authentication is needed for this transaction, please contact
+      (Issuer Name) at xxx-xxx-xxxx.
+  threeDSecureVersion:
+    $ref: .\threeDSecureVersion.yaml
+  threeDSecureAuthenticationType:
+    $ref: .\threeDSecureAuthenticationType.yaml
+  threeDSecureAuthenticationTimestamp:
+    $ref: .\threeDSecureAuthenticationTimestamp.yaml

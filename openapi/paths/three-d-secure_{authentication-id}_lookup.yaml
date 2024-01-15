@@ -1,0 +1,47 @@
+parameters:
+  - $ref: ..\components\parameters\apiVersion.yaml
+  - $ref: ..\components\parameters\correlationId.yaml
+  - $ref: ..\components\parameters\prm-common_apiVersion.yaml
+  - $ref: ..\components\parameters\authenticationId.yaml
+post:
+  summary: Authentication Value Lookup
+  description: >-
+    The point of the 3-D Secure flow is to verify that the true cardholder is a
+    part of the authorization. The challenge flow is used to present a way of
+    authenticating the cardholder using e.g. OTP or a federated identification
+    method.
+  operationId: authenticationValueLookup
+  security:
+    - OAuth2:
+        - payment.write
+    - ApiKeyAuth: []
+  tags:
+    - 3D Secure
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\lookupRequest.yaml
+  responses:
+    '201':
+      description: MPI Authentication operation was successfully authenticated.
+      headers:
+        Api-Version:
+          $ref: ..\components\headers\apiVersion.yaml
+        X-Correlation-Id:
+          $ref: ..\components\headers\correlationId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\authenticationResponse.yaml
+    '400':
+      $ref: ..\components\responses\badRequest.yaml
+    '401':
+      $ref: ..\components\responses\unauthorized.yaml
+    '403':
+      $ref: ..\components\responses\forbidden.yaml
+    '404':
+      $ref: ..\components\responses\notFound.yaml
+    '500':
+      $ref: ..\components\responses\internalServer.yaml

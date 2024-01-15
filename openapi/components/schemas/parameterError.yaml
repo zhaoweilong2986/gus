@@ -1,0 +1,21 @@
+title: Parameter error
+description: Request property or header related error.
+type: object
+properties:
+  parameterName:
+    type: string
+    description: Property or header name. Can contain nested path separated by '.'
+    example: address.postalCode
+  parameterValue:
+    type: string
+    nullable: true
+    description: Property or header value string representation.
+    example: MAP3J8
+  reasonCode:
+    type: string
+    description: Reason that triggered the error.
+    enum:
+      - INVALID_FORMAT
+      - REQUIRED_FIELD
+      - INVALID_VALUE
+    example: INVALID_FORMAT

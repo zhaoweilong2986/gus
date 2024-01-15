@@ -1,0 +1,4 @@
+type: string
+description: String that must be POSTed to the Challenge URL to create challenge screen
+minLength: 1
+maxLength: 2048

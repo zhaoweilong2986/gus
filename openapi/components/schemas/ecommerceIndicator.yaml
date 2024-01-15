@@ -1,0 +1,15 @@
+type: string
+description: >
+  E-commerce transaction category returned by the issuer.  When returned in the
+  responese, it can be different from the value sent in the request in case
+  transaction was downgraded by the issuer.
+enum:
+  - MAIL_TELEPHONE_ORDER_SINGLE
+  - MAIL_TELEPHONE_ORDER_RECURRING
+  - MAIL_TELEPHONE_ORDER_INSTALMENT
+  - MAIL_TELEPHONE_ORDER_UNKNOWN
+  - AUTHENTICATED_ECOMMERCE
+  - NON_AUTHENTICATED_ECOMMERCE
+  - SSL_MERCHANT
+example: AUTHENTICATED_ECOMMERCE
+default: SSL_MERCHANT
