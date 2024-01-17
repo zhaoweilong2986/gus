@@ -26,3 +26,5 @@ theme:
         - lang: JavaScript
         - lang: PHP
         - lang: Python
+        - label: Java
+        - lang: Java+Apache
