@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  version: 1.1.7
+  title: Moneris Internal API
+  description: Moneris API Platform
+  termsOfService: https://developer.moneris.com/terms/
+  contact:
+    name: Moneris Developer Support (MonDev)
+    url: https://developers.moneris.com
+    email: developersupport@moneris.com
+  license:
+    name: Moneris
+    url: https://developer.moneris.com/license
+  x-audience: external-public
+servers:
+  - url: https://api.moneris.io
+paths:
+  /payments:
+    $ref: paths/payments.yaml
+  /payments/{payment-id}:
+    $ref: paths/payments_{payment-id}.yaml
+  /payments/{payment-id}/cancel:
+    $ref: paths/payments_{payment-id}_cancel.yaml
+  /payments/{payment-id}/complete:
+    $ref: paths/payments_{payment-id}_complete.yaml
+  /payment-methods:
+    $ref: paths/payment-methods.yaml
+  /payment-methods/internal/{payment-method-id}:
+    $ref: paths/payment-methods_internal_{payment-method-id}.yaml
+  /payment-methods/{payment-method-id}:
+    $ref: paths/payment-methods_{payment-method-id}.yaml
+  /refunds:
+    $ref: paths/refunds.yaml
+  /refunds/{refund-id}:
+    $ref: paths/refunds_{refund-id}.yaml
+  /validations:
+    $ref: paths/validations.yaml
+  /validations/{validation-id}:
+    $ref: paths/validations_{validation-id}.yaml
+  /customers:
+    $ref: paths/customers.yaml
+  /customers/{customer-id}:
+    $ref: paths/customers_{customer-id}.yaml
+  /three-d-secure:
+    $ref: paths/three-d-secure.yaml
+  /three-d-secure/{authentication-id}:
+    $ref: paths/three-d-secure_{authentication-id}.yaml
+  /three-d-secure/{authentication-id}/lookup:
+    $ref: paths/three-d-secure_{authentication-id}_lookup.yaml
+  /three-d-secure/card-lookups:
+    $ref: paths/three-d-secure_card-lookups.yaml
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.moneris.io/token
+          scopes:
+            payment.read: Grants read access to payment related APIs
+            payment.write: Grants read & write access to payment related APIs
+            refund.read: Grants read access to refunds
+            refund.write: Grants read & write access to refunds
+            customer.read: Grants read access to customer data
+            customer.write: Grants read & write access to customer data
